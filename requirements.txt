@@ -1,0 +1,4 @@
+#requirements
+django
+psycopg2
+django-passwords
