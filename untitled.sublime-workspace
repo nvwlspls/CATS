@@ -1,0 +1,689 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"con",
+				"context_instance"
+			],
+			[
+				"home",
+				"homePage"
+			],
+			[
+				"small",
+				"smallboxes"
+			],
+			[
+				"get",
+				"get_for_model"
+			],
+			[
+				"conten",
+				"content_type"
+			],
+			[
+				"http",
+				"HttpResponse"
+			],
+			[
+				"is",
+				"is_authenticated"
+			],
+			[
+				"if",
+				"if	If Condition"
+			],
+			[
+				"showOrd",
+				"showOrderID"
+			],
+			[
+				"max",
+				"max_digits"
+			],
+			[
+				"Aut",
+				"AutoField"
+			],
+			[
+				"ma",
+				"ManyToManyField"
+			],
+			[
+				"aut",
+				"auto_now"
+			],
+			[
+				"Date",
+				"DateTimeField"
+			],
+			[
+				"for",
+				"ForeignKey"
+			],
+			[
+				"show",
+				"showVenueID"
+			],
+			[
+				"venue",
+				"venueName"
+			],
+			[
+				"dose",
+				"doseLevel"
+			],
+			[
+				"uni",
+				"uniqueDoseLevels"
+			],
+			[
+				"US",
+				"USStateSelect"
+			],
+			[
+				"def",
+				"default"
+			],
+			[
+				"Mo",
+				"model"
+			],
+			[
+				"model",
+				"models"
+			],
+			[
+				"r",
+				"return"
+			],
+			[
+				"dja",
+				"django"
+			],
+			[
+				"m",
+				"max_length"
+			],
+			[
+				"C",
+				"CharField"
+			],
+			[
+				"F",
+				"frame"
+			],
+			[
+				"Check",
+				"CheckTable"
+			],
+			[
+				"ur",
+				"urls"
+			],
+			[
+				"save",
+				"save_it"
+			],
+			[
+				"Sig",
+				"SignUp"
+			],
+			[
+				"render",
+				"render_to_response"
+			],
+			[
+				"S",
+				"SignUpAdmin"
+			],
+			[
+				"Si",
+				"SignUpAdmin"
+			],
+			[
+				"po",
+				"poll_id"
+			],
+			[
+				"p",
+				"poll"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"Po",
+				"poll"
+			],
+			[
+				"pol",
+				"poll_id"
+			],
+			[
+				"d",
+				"django"
+			],
+			[
+				"P",
+				"Poll"
+			],
+			[
+				"Choice",
+				"ChoiceInline"
+			],
+			[
+				"Poll",
+				"PollAdmin"
+			],
+			[
+				"pub",
+				"pub_date"
+			],
+			[
+				"error",
+				"error_message"
+			],
+			[
+				"erro",
+				"error_message"
+			],
+			[
+				"li",
+				"li	Tag"
+			],
+			[
+				"stat",
+				"status"
+			],
+			[
+				"tab",
+				"table	Tag"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"b",
+				"boundingbox"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"tit",
+				"titles"
+			],
+			[
+				"date",
+				"date_takens"
+			],
+			[
+				"wo",
+				"woeids"
+			],
+			[
+				"pl",
+				"placeids"
+			],
+			[
+				"place",
+				"placeid"
+			],
+			[
+				"ge",
+				"geo-data-practice"
+			],
+			[
+				"flick",
+				"flickrapi"
+			],
+			[
+				"fl",
+				"flickr"
+			],
+			[
+				"ap",
+				"api_function"
+			],
+			[
+				"current",
+				"current_page"
+			],
+			[
+				"cu",
+				"current_bbox"
+			],
+			[
+				"min",
+				"min_taken_date"
+			],
+			[
+				"api",
+				"api_key"
+			],
+			[
+				"a",
+				"api_key"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"hsl",
+				"hsla()"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"bo",
+				"border-top"
+			],
+			[
+				"margi",
+				"margin"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"backgrou",
+				"background-color"
+			],
+			[
+				"f",
+				"font-size"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"sta",
+				"start_quote"
+			],
+			[
+				"start",
+				"start_link"
+			],
+			[
+				"no",
+				"nowrap"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"colo",
+				"background-color"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"l",
+				"li	Tag"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"th",
+				"thead	Tag"
+			],
+			[
+				"i",
+				"iframe	Tag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 247.0,
+		"selected_items":
+		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"about",
+				"About"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/moogit/settings.py",
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/shows/models.py",
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/shows/admin.py",
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/moogit/urls.py",
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/shows/views.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/displayHome/views.py",
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/templates/home.html",
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/templates/base.html",
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/static/untitled",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/displayShow/views.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/displayShow/urls.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/displayHome/models.py",
+		"/Users/waynejessen/geographyProject/GEOG_603_Project_Flickr/flickrApp.py",
+		"/Users/waynejessen/geographyProject/20141219Time2259flickrData.csv",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/users/models.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/urls.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/displayHome/urls.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/templates/pages/user.html",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/userHome/views.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/templates/pages/home.html",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/display5shows/admin.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/config/common.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/display5shows/models.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/displayShow/moogitGENRES",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/display5shows/views.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/display5shows/urls.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/displayShow/models.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/displayShow/admin.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/manage.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/users/functions.py",
+		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/displayShow/migrations/urls.py",
+		"/Users/waynejessen/Desktop/cookiecutter-django-1.6.6/README.rst",
+		"/Users/waynejessen/djangoprojects/statesInTuple.py",
+		"/Users/waynejessen/djangoprojects/ICECREAM_SUBLIME/moogit/moogit/users/models.py",
+		"/Users/waynejessen/djangoprojects/ICECREAM_SUBLIME/moogit/moogit/static/css/project.css",
+		"/Users/waynejessen/djangoprojects/ICECREAM_SUBLIME/moogit/moogit/static/sass/project.scss",
+		"/Users/waynejessen/djangoprojects/ICECREAM_SUBLIME/moogit/moogit/templates/pages/home.html",
+		"/Users/waynejessen/djangoprojects/ICECREAM_SUBLIME/moogit/moogit/templates/base.html",
+		"/Users/waynejessen/djangoprojects/ICECREAM_SUBLIME/moogit/moogit/templates/pages/about.html",
+		"/Users/waynejessen/djangoprojects/ICECREAM_SUBLIME/moogit/moogit/config/common.py",
+		"/Volumes/HDD/Dropbox/programming/Moogit-10-11-2014/This is a copy of the moogit repo from github on 1",
+		"/Users/waynejessen/djangoprojects/MOOGIT_SUBLIME/Moogit/Moogit/urls.py",
+		"/Users/waynejessen/djangoprojects/MOOGIT_SUBLIME/Moogit/Moogit/views.py",
+		"/Applications/MAMP/htdocs/navbar.html",
+		"/Users/waynejessen/djangoprojects/MOOGIT_SUBLIME/static/templates/base.html",
+		"/Users/waynejessen/djangoprojects/MOOGIT_SUBLIME/static/templates/nav.html",
+		"/Users/waynejessen/djangoprojects/MOOGIT_SUBLIME/static/static/css/bootstrap-responsive.css",
+		"/Users/waynejessen/djangoprojects/MOOGIT_SUBLIME/static/templates/base2.html",
+		"/Users/waynejessen/djangoprojects/MOOGIT_SUBLIME/Moogit/Moogit/settings.py",
+		"/Users/waynejessen/djangoprojects/MOOGIT_SUBLIME/Moogit/Moogit/templates/base/base.html",
+		"/Users/waynejessen/djangoprojects/MOOGIT_SUBLIME/Moogit/displayshow/views.py",
+		"/Users/waynejessen/djangoprojects/MOOGIT_SUBLIME/Moogit/sendemail/models.py",
+		"/Users/waynejessen/djangoprojects/django packages to install",
+		"/Users/waynejessen/djangoprojects/moogitSublime/Moogit/Moogit/settings/local_mbp.py",
+		"/Users/waynejessen/djangoprojects/moogitSublime/Moogit/Moogit/settings/base.py",
+		"/Users/waynejessen/djangoprojects/moogitSublime/Moogit/Moogit/settings/localmb.py",
+		"/Users/waynejessen/Desktop/21Jul2014/item_data_id",
+		"/Users/waynejessen/Desktop/21Jul2014/ConTreat Code",
+		"/var/folders/tn/4ytj2nqm8xs5qq006s6btk700000gp/T/sublime-sftp-browse-1405977539/linto/home/wjessen/goodRepos/traconGeneric/generic/Functions/HandlePartialDates.fr.v1.0.R",
+		"/var/folders/tn/4ytj2nqm8xs5qq006s6btk700000gp/T/sublime-sftp-browse-1405977406/linto/home/wjessen/goodRepos/traconGeneric/generic/Functions/HandlePartialDates.fr.v1.0.R",
+		"/var/folders/tn/4ytj2nqm8xs5qq006s6btk700000gp/T/sublime-sftp-browse-1405976133/linto/home/wjessen/goodRepos/traconGeneric/generic/Functions/HandlePartialDates.fr.v1.0.R",
+		"/var/folders/tn/4ytj2nqm8xs5qq006s6btk700000gp/T/sublime-sftp-browse-1405971841/linto/home/wjessen/goodRepos/traconGeneric/Listings/ConTreat/ConTreat.fr.v0.1.R",
+		"/Users/waynejessen/Desktop/21Jul2014/DetLastTwoDigits.fr.v1.1.R",
+		"/var/folders/tn/4ytj2nqm8xs5qq006s6btk700000gp/T/sublime-sftp-browse-1405968635/linto/home/wjessen/goodRepos/traconGeneric/Listings/ConcamitantMedication/ConcamitantMedication.fr.v0.0.R",
+		"/var/folders/tn/4ytj2nqm8xs5qq006s6btk700000gp/T/sublime-sftp-browse-1405970019/linto/home/wjessen/goodRepos/traconGeneric/generic/Functions/HandlePartialDates.fr.v1.0.R",
+		"/Users/waynejessen/Desktop/HandlePartialDates.fr.v1.0.R",
+		"/var/folders/tn/4ytj2nqm8xs5qq006s6btk700000gp/T/sublime-sftp-browse-1405962327/linto/home/wjessen/goodRepos/traconGeneric/Listings/PriorCancerTherapy/PriorCancerTherapy.fr.V0.1.R",
+		"/Users/waynejessen/Desktop/moogit/static/templates/signup.html",
+		"/Users/waynejessen/Desktop/moogit/static/static/css/jumbotron.css",
+		"/Users/waynejessen/Desktop/moogit/static/static/css/bootstrap.css",
+		"/Users/waynejessen/Desktop/moogit/src/moogit/settings.py",
+		"/Users/waynejessen/Desktop/moogit/src/moogit/urls.py",
+		"/Users/waynejessen/Desktop/skillshare/static/templates/base.html",
+		"/Users/waynejessen/Desktop/moogit/.Python",
+		"/Users/waynejessen/Desktop/moogit/static/templates/forms.py",
+		"/Users/waynejessen/Desktop/moogit/src/signups/forms.py",
+		"/Users/waynejessen/Desktop/moogit/src/moogit/wsgi.py",
+		"/Users/waynejessen/Desktop/moogit/src/signups/admin.py",
+		"/Users/waynejessen/Desktop/moogit/src/signups/models.py",
+		"/Users/waynejessen/Desktop/moogit/src/signups/views.py",
+		"/Users/waynejessen/Desktop/skillshare/src/mvp_landing/wsgi.py",
+		"/Users/waynejessen/Desktop/skillshare/src/static/signup.html",
+		"/Users/waynejessen/Desktop/skillshare/src/signups/forms.py",
+		"/Users/waynejessen/Desktop/skillshare/src/mvp_landing/settings.py",
+		"/Users/waynejessen/Desktop/skillshare/src/mvp_landing/urls.py",
+		"/Users/waynejessen/Desktop/skillshare/src/signups/tests.py",
+		"/Users/waynejessen/Desktop/skillshare/src/signups/__init__.py",
+		"/Volumes/HDD/django_project/mysite/polls/urls.py",
+		"/Volumes/HDD/django_project/mysite/mysite/settings.py",
+		"/Volumes/HDD/django_project/mysite/polls/views.py",
+		"/Volumes/HDD/django_project/mysite/polls/models.py",
+		"/Volumes/HDD/django_project/mysite/mysite/urls.py",
+		"/Volumes/HDD/django_project/mysite/templates/admin/base_site.html",
+		"/Volumes/HDD/django_project/mysite/polls/admin.py",
+		"/Volumes/HDD/django_project/mysite/polls/tests.py",
+		"/Volumes/HDD/django_project/mysite/mysite/__init__.py",
+		"/Volumes/HDD/django_project/mysite/manage.py",
+		"/Volumes/HDD/Coursera_R/getmonitor.R",
+		"/Volumes/HDD/Coursera_R/corr.R",
+		"/Volumes/HDD/Dropbox/Assignment 7/web/computeAMOR.jsp",
+		"/Volumes/HDD/Dropbox/javascript files/Assignment 7/build.xml",
+		"/Volumes/HDD/Dropbox/javascript files/Assignment 7/A7 P2 (HTML page).txt",
+		"/Applications/MAMP/htdocs/inc/header.php",
+		"/Applications/MAMP/htdocs/receipt.php",
+		"/Applications/MAMP/htdocs/contact.php",
+		"/Volumes/HDD/Dropbox/Dropbox Resume/New Resume Statement",
+		"/Volumes/HDD/Dropbox/Dropbox Resume/qual blurbs",
+		"/Volumes/HDD/Dropbox/Dropbox Resume/Application Info",
+		"/Volumes/HDD/Dropbox/programming/newgit/inc/header.php",
+		"/Volumes/HDD/Dropbox/Dropbox Resume/March 2014/Chris Weil/Chris W. Questions",
+		"/Volumes/HDD/Dropbox/Dropbox Resume/March 2014/Chris Weil/Chris W. Questions - WIll edited",
+		"/Volumes/HDD/Dropbox/Dropbox Resume/March 2014/qinetiq/quintec- oracleDB - Cover Letter",
+		"/Volumes/HDD/Google Drive/programming/php/TTH.php",
+		"/Volumes/HDD/Google Drive/programming/php/easy_functions.php",
+		"/Volumes/HDD/Dropbox/Dropbox Resume/March 2014/RDI tech/RDI tech cover letter",
+		"/Volumes/MAC-HDD/Dropbox/SQL snips/set_trigger",
+		"/Volumes/HDD/Dropbox/SQL snips/SELECT RANDOM",
+		"/Volumes/HDD/Dropbox/SQL snips/SELECT cities",
+		"/Volumes/HDD/Google Drive/design stuff/Moogit/moogit",
+		"/Volumes/MAC-HDD/Dropbox/SQL snips/concat fields",
+		"/Volumes/HDD/Google Drive/programming/flickr_app_repos/GEOG_603_Project_Flickr/flickr-data-8",
+		"/Volumes/HDD/Google Drive/programming/flickr_app_repos/GEOG_603_Project_Flickr/flickr-data020114#2.csv",
+		"/Volumes/HDD/Google Drive/programming/flickr_app_repos/GEOG_603_Project_Flickr/flickr-data020114#2",
+		"/Volumes/HDD/Dropbox/programming/TTH Javascript/java_basics.js",
+		"/Volumes/HDD/Dropbox/College_Stuff/Old classes/ISYS 464/backup/employee table.sql",
+		"/Volumes/HDD/Downloads/shirts4mike 6/shirts.php",
+		"/Applications/MAMP/htdocs/contact-thanks.php",
+		"/Applications/MAMP/htdocs/contact-process.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"\n ",
+			"HttpResponse",
+			"venue",
+			"model.",
+			"tr",
+			"th",
+			"thtr",
+			"))\n",
+			"media",
+			"m",
+			"DetLastTwoDigits",
+			"1201",
+			"year",
+			"1201",
+			"ConMed.Raw",
+			"ActiveTable",
+			"detail",
+			"$_Post",
+			"\">\n",
+			"2874925064",
+			"8564100146",
+			"9332054546",
+			" ;",
+			"$",
+			"9371289005",
+			"9374104304",
+			"goat",
+			"lee",
+			"swag",
+			"yolo\n",
+			"title",
+			"	\n",
+			"new-cupcakes",
+			"btn",
+			"button",
+			"blush",
+			">\n",
+			"search",
+			"server"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"tr",
+			"th",
+			"tr",
+			"ActiveTable",
+			"ConMed.Raw"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.sftp":
+	{
+		"height": 112.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"final/index-2.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 212.0,
+	"status_bar_visible": true
+}
