@@ -16,9 +16,23 @@ class Migration(migrations.Migration):
                 ('bandID', models.AutoField(serialize=False, primary_key=True)),
                 ('bandName', models.CharField(default=b'Band Name', max_length=200)),
                 ('homeTown', models.CharField(default=b'Home Town', max_length=100)),
+                ('homeState', models.CharField(default=b'None', max_length=50)),
                 ('genre', models.CharField(max_length=75)),
+                ('subGenre', models.CharField(max_length=75)),
                 ('bandDateAdded', models.DateTimeField(auto_now_add=True)),
                 ('bandDateMod', models.DateTimeField(auto_now=True)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='contact',
+            fields=[
+                ('email', models.EmailField(default=b'email@email.com', max_length=100, serialize=False, primary_key=True)),
+                ('firstName', models.CharField(default=b'first name', max_length=100)),
+                ('lastName', models.CharField(default=b'last name', max_length=100)),
+                ('nickname', models.CharField(default=b'nickname', max_length=100)),
             ],
             options={
             },
@@ -66,9 +80,9 @@ class Migration(migrations.Migration):
                 ('venueLastMod', models.DateTimeField(auto_now=True)),
                 ('streetAddress', models.CharField(default=b'Street Address', max_length=150)),
                 ('city', models.CharField(default=b'City', max_length=150)),
-                ('conFirstName', models.CharField(default=b'First Name', max_length=100)),
-                ('conLastName', models.CharField(default=b'Last Name', max_length=100)),
-                ('conEmail', models.EmailField(default=b'email@email.com', max_length=100)),
+                ('state', models.CharField(default=b'None', max_length=50)),
+                ('zipCode', models.CharField(default=b'00000', max_length=9, null=True)),
+                ('contact2', models.ForeignKey(related_name='contact2', to='shows.contact', null=True)),
             ],
             options={
             },

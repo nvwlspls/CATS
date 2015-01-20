@@ -3,6 +3,18 @@ from django.db import models
 from localflavor.us.forms import USPhoneNumberField, USStateSelect, USZipCodeField
 
 
+class contact(models.Model):
+
+    email = models.EmailField(max_length = 100,
+                              default = 'email@email.com',
+                              primary_key = True)
+    firstName = models.CharField(max_length = 100,
+                                default = 'first name')
+    lastName = models.CharField(max_length = 100,
+                                default = 'last name')
+    nickname = models.CharField(max_length = 100,
+                                default = 'nickname')
+
 
 # Create your models here.
 class Venue(models.Model):
@@ -28,11 +40,13 @@ class Venue(models.Model):
                                         default = "Street Address")
     city           = models.CharField(max_length = 150,
                                       default = "City")
-    state          = USStateSelect()
-    zipCode        = USZipCodeField()
+    state          = models.CharField( max_length = 50,
+                                        default = "None")
+    zipCode        = models.CharField(max_length = 9,
+                                        default = '00000', null = True)
     phone          = USPhoneNumberField()
-    contact2       = models.ForeignKey('contact', related_name = 'venueContact',
-                                        default = 'email@email.com')
+    contact2       = models.ForeignKey('contact', related_name = 'contact2',
+                                        null = True)
     # contact        = models.ForeignKey('contact', related_name = 'venueContact',
     #                                     default = 1)
     # conFirstName   = models.CharField(max_length = 100,
@@ -52,9 +66,11 @@ class Band(models.Model):
                                       default = "Band Name")
     homeTown      = models.CharField(max_length = 100,
                                     default = "Home Town")
-    homeState     = USStateSelect()
+    homeState      = models.CharField( max_length = 50, null = True)
+    homeState2     = models.CharField( max_length = 50, null = True)
     #TODO: Add a genre selection field
     genre         = models.CharField(max_length = 75 )
+    subGenre      = models.CharField(max_length = 75)
     bandDateAdded = models.DateTimeField(auto_now_add = True)
     bandDateMod   = models.DateTimeField(auto_now = True)
     # shows         = models.ManyToManyField(Show2)
@@ -87,15 +103,3 @@ class show(models.Model):
 
     def __unicode__(self):
        return unicode(self.show2ID) 
-
-class contact(models.Model):
-
-    email = models.EmailField(max_length = 100,
-                              default = 'email@email.com',
-                              primary_key = True)
-    firstName = models.CharField(max_length = 100,
-                                default = 'first name')
-    lastName = models.CharField(max_length = 100,
-                                default = 'last name')
-    nickname = models.CharField(max_length = 100,
-                                default = 'nickname')
