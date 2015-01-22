@@ -95,10 +95,11 @@ class show(models.Model):
     Time           = models.TimeField()
     DateTimeAdded  = models.DateTimeField(auto_now_add = True)
     DateTimeMod    = models.DateTimeField(auto_now = True)
-    bands          = models.ManyToManyField(Band, related_name = "bands" )
-    orders         = models.ManyToManyField(showOrder, related_name = 'orders')
+    bands          = models.ManyToManyField(Band, related_name = "bands", 
+                                                    null = True )
+    orders         = models.ManyToManyField(showOrder, related_name = 'orders', null = True)
     bandExtraTesxt = models.TextField()
-    age            = models.IntegerField()
+    age            = models.CharField(max_length = 3, null = True)
     cost           = models.DecimalField(max_digits = 5, decimal_places = 2)
 
     def __unicode__(self):
