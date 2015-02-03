@@ -3,7 +3,7 @@ from shows import venues2
 import random, time
 
 
-from shows.modes import Venue, contact, Show, showOrder
+from shows.models import Venue, contact, Show, showOrder
 
 venues = venues2.venues
 fake = Factory.create()

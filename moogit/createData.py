@@ -76,3 +76,4 @@ for i in range(1, 100):
   insertVenue(fakeVenueName, fakeContact ,fakeDescription, fakeArea, 
               fakeNeighborhood, fakeVenueStreetAddress, fakeVenueCity, 
               fakeVenueState, fakeVenueZip, fakeVenuePhone)
+

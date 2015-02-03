@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Django default" uuid="4214b078-8273-48dd-9275-f989dc7e2ab3">
+      <user-name>django</user-name>
+      <user-password>dfe9dfe2dfebdfe4dfeddfefdfe7dfef</user-password>
+      <schema-pattern>catsDB.pg_catalog catsDB.public</schema-pattern>
+      <default-schemas>catsDB.pg_catalog catsDB.public</default-schemas>
+    </data-source>
+  </component>
+</project>

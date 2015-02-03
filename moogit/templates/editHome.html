@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{%  block content %}
+
+#TODO: Add adjust proper css file for padding
+<div class="container theme-showcase" style="padding-top: 70px;">
+
+<div class="jumbotron">
+
+        <div class="col-md-3">1</div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <span class="input-group-addon">Band #1</span>
+                        {{ form.bandName }}
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Band #2</span>
+                        {{ form.bandName }}
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Band #3</span>
+                        {{ form.bandName }}
+            </div>
+{#        <div class="row"><b>Headliner</b> {{ form.bandName }}</div><br>#}
+{#        <div class="row">Band Number  2 {{ form.bandName }}</div><br>#}
+{#        <div class="row">Band Number 3 {{ form.bandName }}</div><br>#}
+{#        <div class="row">Band Number 4 {{ form.bandName }}</div><br>#}
+</div><br>
+
+<div class="jumbotron">
+
+</div>
+</div>
+
+#TODO: Add adjust proper css file for padding
+<div class="container theme-showcase" style="padding-top: 30px;">
+    <div class="jumbotron">
+        <table>
+            <thead>
+                <th>Band Name</th>
+
+            </thead>
+            <tbody>
+            {% for band in bands %}
+                <tr>
+                    <td>{{ band }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+
+        </table>
+    </div>
+
+</div>
+
+
+{% endblock %}
+

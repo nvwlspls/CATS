@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% block extrahead %}
+<
+
+{% endblock %}
+
 
 {% block content %}
 <br><br><br><br>
@@ -10,60 +15,34 @@
 
 
 <br><br>
-<div class = "jumbotron">
-<div class = "row">
-    <div class = "col-md-4">
-		<button type="button" class="btn btn-primary btn-lg">Sort by Date</button>
-	</div>
-
-    <div class = "col-md-4">
-		<button type="button" class="btn btn-primary btn-lg">Sort by Area</button>
-	</div>
-
-	<div class = "col-md-4">
-		<button type="button" class="btn btn-primary btn-lg">Sort by Genre</button>
-	</div>
-</div>
 <br>
 <div class="table">
   <table class="table">
-  	<thead>
-		<tr>
+  	<thead><tr>
 	    	<th>Bands</th>
 	    	<th>Venue</th>
 	    	<th>Date</th>
 	    	<th>Time</th>
 	    	<th>Age</th>
 	    	<th>Cost</th>
-    	</tr>
-    </thead>
+    	</tr></thead>
 {% for show in shows %}
-<tr>
-	<td>
- 		Headliner is:
- 			<b> {{ show.showIDOrder.all.0.bandID.bandName }} </b><br>
- 		{{ show.showIDOrder.all.1.bandID.bandName }}<br>
- 		{{ show.showIDOrder.all.2.bandID.bandName}}
-
-
-	</td>
-	<td>{{show.showVenueID}}</td>
-	<td>{{show.Date}}</td>
-	<td>{{show.Time}}</td>
-	<td>{{show.age}}</td>
-	<td>{{show.cost}}</td>
-
-</tr>
-
-{% endfor %}
-
-
-
-     </table>
+    <tr>
+	    <td>
+ 		    Headliner is:
+ 		    <b> {{ show.showIDOrder.all.0.bandID.bandName }} </b><br>
+ 		    {{ show.showIDOrder.all.1.bandID.bandName }}<br>
+ 		    {{ show.showIDOrder.all.2.bandID.bandName}}
+        </td>
+	    <td>{{show.showVenueID}}</td>
+	    <td>{{show.Date}}</td>
+	    <td>{{show.Time}}</td>
+	    <td>{{show.age}}</td>
+	    <td>{{show.cost}}</td>
+    </tr>
+    {% endfor %}
+  </table>
 </div>
-
-
-
 </div>
 </div>
 

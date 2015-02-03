@@ -59,7 +59,6 @@ class Venue(models.Model):
     def __unicode__(self):
        return unicode(self.venueName)  
 
-
 class Band(models.Model):
     bandID        = models.AutoField(primary_key = True)
     bandName      = models.CharField(max_length = 200,
