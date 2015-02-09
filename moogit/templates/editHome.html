@@ -1,58 +1,75 @@
 {% extends 'base.html' %}
+
+{% block extrahead %}
+
+  #sortable1, #sortable2, #sortable3 { list-style-type: none; margin: 0; padding: 0; float: left; margin-right: 10px; background: #eee; padding: 5px; width: 143px;}
+  #sortable1 li, #sortable2 li, #sortable3 li { margin: 5px; padding: 5px; font-size: 1.2em; width: 120px; }
+
+{%  endblock %}
+
 {%  block content %}
 
-#TODO: Add adjust proper css file for padding
-<div class="container theme-showcase" style="padding-top: 70px;">
+{#TODO: Add adjust proper css file for padding#}
+
+<div class="container theme-showcase" style="padding-top: 10%;">
 
 <div class="jumbotron">
+    <div class="container">
+        <h3>Bands in the show</h3>
+        <ul class="list-group col-md-8" id="showBands"
+                style="padding: 10px; background-color: #398439;">
+        </ul>
+</div>
+    
+</div>
 
-        <div class="col-md-3">1</div>
-        <div class="col-md-3">
-            <div class="input-group">
-                <span class="input-group-addon">Band #1</span>
-                        {{ form.bandName }}
-            </div>
-            <div class="input-group">
-                <span class="input-group-addon">Band #2</span>
-                        {{ form.bandName }}
-            </div>
-            <div class="input-group">
-                <span class="input-group-addon">Band #3</span>
-                        {{ form.bandName }}
-            </div>
-{#        <div class="row"><b>Headliner</b> {{ form.bandName }}</div><br>#}
-{#        <div class="row">Band Number  2 {{ form.bandName }}</div><br>#}
-{#        <div class="row">Band Number 3 {{ form.bandName }}</div><br>#}
-{#        <div class="row">Band Number 4 {{ form.bandName }}</div><br>#}
-</div><br>
+
+
+
 
 <div class="jumbotron">
-
-</div>
-</div>
-
-#TODO: Add adjust proper css file for padding
-<div class="container theme-showcase" style="padding-top: 30px;">
-    <div class="jumbotron">
-        <table>
-            <thead>
-                <th>Band Name</th>
-
-            </thead>
-            <tbody>
-            {% for band in bands %}
-                <tr>
-                    <td>{{ band }}</td>
-                </tr>
+<div class="container">
+    <h3>Other bands</h3>
+    <ul class="list-group col-md-8" id="allBands" style="padding: 10px; background-color: #398439">
+                    {% for band in bands %}
+                <li class="ui-state-default list-group-item" >
+                    {{ band.bandName }} / {{ band.homeTown }} / {{ band.genre }}
+                </li>
             {% endfor %}
-            </tbody>
 
+    </ul>
 
-        </table>
-    </div>
+</div></div>
+
 
 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+{##TODO: Add adjust proper css file for padding#}
 {% endblock %}
 
+{% block extraTail %}
+  <script>
+  $(function() {
+    $( "#allBands" ).sortable({
+        connectWith: "#showBands"
+    });
+    $("#showBands").sortable({
+        connectWith: "#allBands"
+    })
+  });
+
+    </script>
+
+{% endblock %}
