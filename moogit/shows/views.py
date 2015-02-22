@@ -44,18 +44,19 @@ class viewEditHome(View):
 
         bandObjects = Band.objects.all()
 
-        bands = list(Band.objects.values('bandName'))
-        bandNames = []
-        for band in bands:
-            bandNames.append(band['bandName'])
-        bandNamesJSON = json.dumps(bandNames)
+        bands = list(Band.objects.values('bandName', 'bandID'))
+        bands = json.dumps(bands)
+        # bandNames = []
+        # for band in bands:
+        #     bandNames.append(band['bandName'])
+        # bandNamesJSON = json.dumps(bandNames)
 
 
 
 
 
         return render_to_response('editHome.html', {'form': form,
-                                                    'bands': bandNamesJSON,
+                                                    'bands': bands,
                                                     'bandObjects': bandObjects},
                                   context_instance = RequestContext(request))
 
