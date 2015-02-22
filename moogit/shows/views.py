@@ -9,6 +9,8 @@ from django.http import HttpResponse
 # Create your views here.
 import datetime
 import csv
+import json
+
 
 from forms import addBandForm
 from django.http           import HttpResponse
@@ -40,10 +42,18 @@ class viewEditHome(View):
         from shows.models import Band
         form = addBandForm
 
-        bands = Band.objects.all()
+        bands = list(Band.objects.values('bandName'))
+        bandNames = []
+        for band in bands:
+            bandNames.append(band['bandName'])
+        bandNamesJSON = json.dumps(bandNames)
+
+
+
+
 
         return render_to_response('editHome.html', {'form' : form,
-                                                    'bands' : bands} ,context_instance = RequestContext(request))
+                                                    'bands' : bandNamesJSON} ,context_instance = RequestContext(request))
 
 
 

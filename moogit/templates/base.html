@@ -17,6 +17,10 @@
     <link href="https://code.jquery.com/ui/1.11.2/themes/le-frog/jquery-ui.css" rel="stylesheet">
 
 
+      <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+            <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 {#    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->#}
 {#    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>#}
@@ -70,9 +74,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     {% load staticfiles %}
 
-    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
-            <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
       {% block extraTail %}
       {%  endblock %}
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

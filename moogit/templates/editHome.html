@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 
 {% block extrahead %}
+  <script>
+  $(function() {
+    var availableTags = {{ bands|safe }};
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
 
-  #sortable1, #sortable2, #sortable3 { list-style-type: none; margin: 0; padding: 0; float: left; margin-right: 10px; background: #eee; padding: 5px; width: 143px;}
-  #sortable1 li, #sortable2 li, #sortable3 li { margin: 5px; padding: 5px; font-size: 1.2em; width: 120px; }
+
 
 {%  endblock %}
 
@@ -15,31 +22,49 @@
 
 <div class="jumbotron">
     <div class="container">
-        <h3>Bands in the show</h3>
-        <ul class="list-group col-md-8" id="showBands"
-                style="padding: 10px; background-color: #398439;">
-        </ul>
-</div>
-    
-</div>
+        <h3>Enter a band:</h3>
+    <form>
+            <div class="form-group">
+            <div class="ui-widget">
+                <label for="tags">Tags: </label>
+                <input id='tags'>
+            </div>
+
+            </div>
+
+
+
+        </form>
+    </div>
+
+    </div>
 
 
 
 
 
-<div class="jumbotron">
-<div class="container">
-    <h3>Other bands</h3>
-    <ul class="list-group col-md-8" id="allBands" style="padding: 10px; background-color: #398439">
-                    {% for band in bands %}
-                <li class="ui-state-default list-group-item" >
-                    {{ band.bandName }} / {{ band.homeTown }} / {{ band.genre }}
-                </li>
-            {% endfor %}
-
-    </ul>
-
-</div></div>
+{#<div class="jumbotron">#}
+{#<div class="container">#}
+{#    <h3>Other bands</h3>#}
+{#    <div class="container">#}
+{#    <ul class="list-group col-md-8" id="allBands" style="background-color: #840b2b; padding: 30px;" >#}
+{#                    {% for band in bands %}#}
+{##}
+{#                <li class="ui-state-default list-group-item" >#}
+{#                <div class="container">#}
+{#                <row>#}
+{#                    <div class="col-xs-4">  {{ band.bandName }} </div>#}
+{#                    <div class="col-xs-4">  {{ band.homeTown }} </div>#}
+{#                    <div class="col-xs-4">  {{ band.genre }}    </div>#}
+{#                </row>#}
+{#                    </div>#}
+{#                </li>#}
+{#            {% endfor %}#}
+{##}
+{#    </ul>#}
+{#    </div>#}
+{##}
+{#</div></div>#}
 
 
 </div>
@@ -59,17 +84,4 @@
 {##TODO: Add adjust proper css file for padding#}
 {% endblock %}
 
-{% block extraTail %}
-  <script>
-  $(function() {
-    $( "#allBands" ).sortable({
-        connectWith: "#showBands"
-    });
-    $("#showBands").sortable({
-        connectWith: "#allBands"
-    })
-  });
 
-    </script>
-
-{% endblock %}
