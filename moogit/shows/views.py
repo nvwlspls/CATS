@@ -42,6 +42,8 @@ class viewEditHome(View):
         from shows.models import Band
         form = addBandForm
 
+        bandObjects = Band.objects.all()
+
         bands = list(Band.objects.values('bandName'))
         bandNames = []
         for band in bands:
@@ -52,8 +54,10 @@ class viewEditHome(View):
 
 
 
-        return render_to_response('editHome.html', {'form' : form,
-                                                    'bands' : bandNamesJSON} ,context_instance = RequestContext(request))
+        return render_to_response('editHome.html', {'form': form,
+                                                    'bands': bandNamesJSON,
+                                                    'bandObjects': bandObjects},
+                                  context_instance = RequestContext(request))
 
 
 

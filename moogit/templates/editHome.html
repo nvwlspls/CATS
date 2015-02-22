@@ -4,7 +4,7 @@
   <script>
   $(function() {
     var availableTags = {{ bands|safe }};
-    $( "#tags" ).autocomplete({
+    $( "#bandName" ).autocomplete({
       source: availableTags
     });
   });
@@ -25,63 +25,71 @@
         <h3>Enter a band:</h3>
     <form>
             <div class="form-group">
-            <div class="ui-widget">
-                <label for="tags">Tags: </label>
-                <input id='tags'>
+                <div class="ui-widget">
+                    <label for="bandName">Band Name: </label>
+                    <input id='bandName'>
+                </div>
             </div>
-
+            <div class="form-group">
+                <label for="City">Bands City</label>
             </div>
 
 
 
         </form>
     </div>
+</div>
 
+<div class="jumbotron">
+    <div class="container" style="padding: 10px">
+        <h3>Bands in show</h3>
+        <
+        
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="container" style="padding: 10px">
+    <div class="input-group">
+        <label for="searchList">Search for a band: </label>
+        <input id="searchList" data-list=".bandList">
     </div>
 
+        <ul>
+                <div class="row">
+            <div class="col-lg-3"><h4>Band Name</h4></div>
+            <div class="col-lg-3"><h4>Band State</h4></div>
+            <div class="col-lg-3"><h4>Genre</h4></div>
+            <div class="col-lg-3"><h4>Sub-Genre</h4></div>
+        </div>
+        <div class="list-group bandList">
+            {% for bandObject in bandObjects %}
+
+                <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-3 bandName">{{ bandObject.bandName }}</div>
+                    <div class="col-md-3 homeState2">{{ bandObject.homeState2 }}</div>
+                    <div class="col-md-3">{{ bandObject.genre }}</div>
+                    <div class="col-md-3">{{ bandObject.subGenre }}</div>
+                </div
+                </li>
+            {% endfor %}
+        </ul>
+        </div>
+
+    </div>
+</div>
 
 
-
-
-{#<div class="jumbotron">#}
-{#<div class="container">#}
-{#    <h3>Other bands</h3>#}
-{#    <div class="container">#}
-{#    <ul class="list-group col-md-8" id="allBands" style="background-color: #840b2b; padding: 30px;" >#}
-{#                    {% for band in bands %}#}
-{##}
-{#                <li class="ui-state-default list-group-item" >#}
-{#                <div class="container">#}
-{#                <row>#}
-{#                    <div class="col-xs-4">  {{ band.bandName }} </div>#}
-{#                    <div class="col-xs-4">  {{ band.homeTown }} </div>#}
-{#                    <div class="col-xs-4">  {{ band.genre }}    </div>#}
-{#                </row>#}
-{#                    </div>#}
-{#                </li>#}
-{#            {% endfor %}#}
-{##}
-{#    </ul>#}
-{#    </div>#}
-{##}
-{#</div></div>#}
+\
 
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
 {##TODO: Add adjust proper css file for padding#}
 {% endblock %}
+{% block extraTail %}
+    <script> $('#searchList').hideseek();</script>
 
+{% endblock %}
 
