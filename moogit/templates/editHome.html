@@ -35,23 +35,23 @@
                 <div class="row enterBandRow">
                     <div class="col-md-2" id="bandWidget">
                         <label for="bandName">Band Name: </label>
-                        <input id='bandName'>
+                        <input id='bandName' class="form-control">
                     </div>
                     <div class="col-md-2">
                         <label for="bandCity">Home City: </label>
-                        <input id="bandCity">
+                        <input id="bandCity" class="form-control disable">
                     </div>
                     <div class="col-md-2" id="bandStateDiv">
                         <label for="bandSate">Band State</label>
-                        <input id="bandState">
+                        <input id="bandState" class="form-control disable" >
                     </div>
                     <div class="col-md-2">
                         <label for="bandGenre">Band Genre:</label>
-                        <input id="bandGenre">
+                        <input id="bandGenre" class="form-control disable">
                     </div>
                     <div  class="col-md-2">
                         <label for="bandSubGenre">Band Sub-Genre</label>
-                        <input id="bandSubGenre">
+                        <input id="bandSubGenre" class="form-control disable">
                     </div>
                 </div>
             </div>
@@ -149,9 +149,10 @@
             document.getElementById("bandGenre").value = genreText;
             document.getElementById("bandSubGenre").value = subGenreText;
 
-            //change the text elements to buttons
+            //disable text inputs
+            $(".disable").prop('disabled', 'true');
 
-        }
+            }
         )
     </script>
     <script> $('#searchList').hideseek();</script>
