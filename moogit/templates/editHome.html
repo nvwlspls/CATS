@@ -1,20 +1,23 @@
 {% extends 'base.html' %}
 
 {% block extrahead %}
-  <script>
-  $(function() {
-    var bandNames = {{ bands|safe }};
-    $( '#bandName' ).autocomplete({
-      source: bandNames
+    {% load staticfiles %}
+    <script src="{% static 'js/showsFunctions.js' %}"></script>
 
+    <script>
+        var bandNameDict = {{ bandNameDict|safe }};
+        var bandObjectDict = {{ bandObjectDict|safe }}
+        var bandKeys = Object.keys(bandNameDict);
+
+        $(function() {
+        var bandNames = {{ bandNameDict|safe }};
+        var bandNameList = Object.keys(bandNames)
+        $( '#bandName' ).autocomplete({
+          source: bandNameList
+        });
     });
-  });
-  </script>
+    </script>
 
-  <script>
-
-
-  </script>
 
 
 {%  endblock %}
@@ -29,20 +32,24 @@
         <form>
             <h3>Enter a band:</h3>
             <div class="form-group">
-                <div class="row">
-                    <div class="ui-widget col-md-3" id="bandWidget">
+                <div class="row enterBandRow">
+                    <div class="col-md-2" id="bandWidget">
                         <label for="bandName">Band Name: </label>
                         <input id='bandName'>
                     </div>
-                    <div class="col-md-3" id="bandState">
-                        <label for="bandSate">Band State</label>
-                        <input id="bandSate">
+                    <div class="col-md-2">
+                        <label for="bandCity">Home City: </label>
+                        <input id="bandCity">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2" id="bandStateDiv">
+                        <label for="bandSate">Band State</label>
+                        <input id="bandState">
+                    </div>
+                    <div class="col-md-2">
                         <label for="bandGenre">Band Genre:</label>
                         <input id="bandGenre">
                     </div>
-                    <div  class="col-md-3">
+                    <div  class="col-md-2">
                         <label for="bandSubGenre">Band Sub-Genre</label>
                         <input id="bandSubGenre">
                     </div>
@@ -81,8 +88,9 @@
 
         <ul class="list-group">
             <div class="row">
-                <div class="col-lg-3"><h4>Band Name</h4></div>
-                <div class="col-lg-3"><h4>Band State</h4></div>
+                <div class="col-lg-2"><h4>Band Name</h4></div>
+                <div class="col-lg-2"><h4>Home Town</h4></div>
+                <div class="col-lg-2"><h4>Home State</h4></div>
                 <div class="col-lg-2"><h4>Genre</h4></div>
                 <div class="col-lg-2"><h4>Sub-Genre</h4></div>
             </div>
@@ -93,11 +101,11 @@
                 <div class="row">
                     <span class="badge" style="background-color: transparent"><a href="#">add</a> </span>
                     <span class="badge" style="background-color: transparent"><a href="#">edit</a> </span>
-                    <div class="col-md-3 bandName">{{ bandObject.bandName }}</div>
-                    <div class="col-md-3 homeState2">{{ bandObject.homeState2 }}</div>
+                    <div class="col-md-2 bandName">{{ bandObject.bandName }}</div>
+                    <div class="col-md-2 bandTown">{{ bandObject.homeTown }}</div>
+                    <div class="col-md-2 homeState2">{{ bandObject.homeState2 }}</div>
                     <div class="col-md-2">{{ bandObject.genre }}</div>
                     <div class="col-md-2">{{ bandObject.subGenre }}</div>
-
                 </div>
                 </li>
             {% endfor %}
@@ -114,6 +122,38 @@
 {##TODO: Add adjust proper css file for padding#}
 {% endblock %}
 {% block extraTail %}
+
+    <script>
+        $("#bandName").on("autocompleteselect", function( event, ui ){
+
+            var bandNameDict = {{ bandNameDict|safe }};
+            var bandObjectDict = {{ bandObjectDict|safe }};
+            var bandKeys = Object.keys(bandNameDict);
+
+            var bandName = ui.item.value;
+
+            //fill in the rest of the input fields with the band info
+            var bandID = bandNameDict[bandName];
+
+            var bandInfo = bandObjectDict[bandID];
+
+            //Get values from list
+            var townText = bandInfo[1];
+            var stateText = bandInfo[2];
+            var genreText = bandInfo[3];
+            var subGenreText = bandInfo[4];
+
+            //set the inputs to new values
+            document.getElementById("bandCity").value = townText;
+            document.getElementById("bandState").value = stateText;
+            document.getElementById("bandGenre").value = genreText;
+            document.getElementById("bandSubGenre").value = subGenreText;
+
+            //change the text elements to buttons
+
+        }
+        )
+    </script>
     <script> $('#searchList').hideseek();</script>
     <script> $('#bandWidget')</script>
 

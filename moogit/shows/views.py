@@ -42,22 +42,32 @@ class viewEditHome(View):
         from shows.models import Band
         form = addBandForm
 
+        bands = Band.objects.all()
+        bandNameDict = {}
+        bandObjectDict = {}
+        for band in bands:
+            bandNameDict[str(band.bandName)] = band.bandID
+            bandObjectDict[band.bandID] = [str(band.bandName),
+                                           str(band.homeTown),
+                                           str(band.homeState2),
+                                           str(band.genre),
+                                           str(band.subGenre)]
+
+        bandNameDict = json.dumps(bandNameDict)
+        bandObjectDict = json.dumps(bandObjectDict)
+
+
+
         bandObjects = Band.objects.all()
 
         bands = list(Band.objects.values('bandName', 'bandID'))
         bands = json.dumps(bands)
-        # bandNames = []
-        # for band in bands:
-        #     bandNames.append(band['bandName'])
-        # bandNamesJSON = json.dumps(bandNames)
-
-
-
-
 
         return render_to_response('editHome.html', {'form': form,
                                                     'bands': bands,
-                                                    'bandObjects': bandObjects},
+                                                    'bandObjects': bandObjects,
+                                                    'bandNameDict' : bandNameDict,
+                                                    'bandObjectDict' : bandObjectDict},
                                   context_instance = RequestContext(request))
 
 
