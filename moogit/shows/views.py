@@ -12,13 +12,14 @@ import csv
 import json
 
 
-from forms import addBandForm
+
 from django.http           import HttpResponse
 from django.template       import RequestContext, loader
 from django.shortcuts      import get_object_or_404, render_to_response, redirect, render
 from django.utils          import timezone
 from django.contrib        import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.forms.formsets import formset_factory
 
 from django.views.generic import TemplateView, View, ListView, \
     UpdateView, DeleteView, CreateView, FormView
@@ -40,7 +41,11 @@ class viewEditHome(View):
     def get(self, request, *args, **kwargs):
 
         from shows.models import Band
+        from shows.forms import addBandForm
+        
         form = addBandForm
+
+        BandFormSet = formset_factory(addBandForm, extra = 3)
 
         bands = Band.objects.all()
         bandNameDict = {}
@@ -67,7 +72,8 @@ class viewEditHome(View):
                                                     'bands': bands,
                                                     'bandObjects': bandObjects,
                                                     'bandNameDict' : bandNameDict,
-                                                    'bandObjectDict' : bandObjectDict},
+                                                    'bandObjectDict' : bandObjectDict,
+                                                    'BandFormSet' : BandFormSet},
                                   context_instance = RequestContext(request))
 
 

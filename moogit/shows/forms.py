@@ -3,22 +3,34 @@ __author__ = 'waynejessen'
 
 #from django.forms import ModelForm
 from django import forms
-from localflavor.us.forms import USPhoneNumberField, USPSSelect, USStateSelect
+from django.forms import widgets
+from localflavor.us.forms import USPhoneNumberField, USPSSelect, USStateSelect, USStateField
 
 class addBandForm(forms.Form):
 
-    bandName = forms.CharField(max_length= 200,
-                               label= "Band Name",
-                               widget= forms.TextInput(attrs = {'class': 'form-control',
-                                                                'placeholder' : "Band Name"}))
+  bandName = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-group-control'}))
 
-    bandTown = forms.CharField(max_length= 100,
-                               label = "Band Home Town",
-                               widget= forms.TextInput(attrs={'class': 'form-control',
-                                                              'placeholder' : 'Band Town'}))
+  bandTown = forms.CharField(widget=forms.TextInput(attrs={'class' : 'form-group-control'}))
 
-    bandState = USStateSelect()
+  bandState = USStateField(widget=USStateSelect(attrs={'class':'form-control'})) 
 
-    genre = forms.ChoiceField()
+  genre = forms.ChoiceField(widget=forms.Select(attrs={'class':'form-control'}))
 
-    subGenre = forms.CharField()
+  subGenre = forms.ChoiceField(widget=forms.Select(attrs={'class':'form-control'}))
+
+
+    # bandName = forms.CharField(max_length= 200,
+    #                            label= "Band Name",
+    #                            widget= forms.TextInput(attrs = {'class': 'form-control',
+    #                                                             'placeholder' : "Band Name"}))
+
+    # bandTown = forms.CharField(max_length= 100,
+    #                            label = "Band Home Town",
+    #                            widget= forms.TextInput(attrs={'class': 'form-control',
+    #                                                           'placeholder' : 'Band Town'}))
+
+    # bandState = forms.
+
+    # genre = forms.ChoiceField()
+
+    # subGenre = forms.CharField()

@@ -6,7 +6,7 @@
 
     <script>
         var bandNameDict = {{ bandNameDict|safe }};
-        var bandObjectDict = {{ bandObjectDict|safe }}
+        var bandObjectDict = {{ bandObjectDict|safe }};
         var bandKeys = Object.keys(bandNameDict);
 
         $(function() {
@@ -18,7 +18,10 @@
     });
     </script>
 
-
+<script type="text/javascript">
+//append rows to band box
+    $("#bandRow").clone().appendTo("#bandPanel")
+</script>
 
 {%  endblock %}
 
@@ -27,40 +30,53 @@
 {#TODO: Add adjust proper css file for padding#}
 
 
-<div class="jumbotron">
-    <div class="container" style="padding: 10px">
-        <form>
-            <h3>Enter a band:</h3>
-            <div class="form-group">
-                <div class="row enterBandRow">
-                    <div class="col-md-2" id="bandWidget">
-                        <label for="bandName">Band Name: </label>
-                        <input id='bandName' class="form-control">
+  <div class="jumbotron" >
+    <form id="bandPanel" method='POST'>
+    {% csrf_token %}
+        {% for formGroup in BandFormSet %}
+            <div class="row panel" id="bandRow">
+              <div class='container' style='padding-top: 15px'>
+                <div class="col-md-3" >
+                  <div class='container' >
+                    <div class='form-group'>
+                      {{formGroup.bandName}}
+                      <p><a href="#" class="btn btn-default">Edit</a></p>
                     </div>
-                    <div class="col-md-2">
-                        <label for="bandCity">Home City: </label>
-                        <input id="bandCity" class="form-control disable">
-                    </div>
-                    <div class="col-md-2" id="bandStateDiv">
-                        <label for="bandSate">Band State</label>
-                        <input id="bandState" class="form-control disable" >
-                    </div>
-                    <div class="col-md-2">
-                        <label for="bandGenre">Band Genre:</label>
-                        <input id="bandGenre" class="form-control disable">
-                    </div>
-                    <div  class="col-md-2">
-                        <label for="bandSubGenre">Band Sub-Genre</label>
-                        <input id="bandSubGenre" class="form-control disable">
-                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="btn-group">
-                <button type="button" class="btn btn-default">Add & Save</button>
-            </div>
-        </form>
-    </div>
-</div>
+                <div class='col-md-3'>
+                  <div class='container'>
+                    <div class='form-group'>
+                      {{formGroup.bandTown}}
+                      <p><a href="#" class="btn btn-default">Edit</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class='col-md-2' >
+                  <div class='container' >
+                    {{formGroup.bandState}}
+                    <p><a href="#" class="btn btn-default">Edit</a></p>
+                  </div>
+                </div>
+                <div class='col-md-2' >
+                <div class='container'>
+                  {{formGroup.genre}}
+                  <p><a href="#" class="btn btn-default">Edit</a></p>
+                </div>
+              </div>
+                <div class='col-md-2'>
+                  <div class='container'>
+                    {{formGroup.subGenre}}
+                    <p><a href="#" class='btn btn-default'>Edit</a></p>
+                  </div>
+                </div>
+                </div>
+              </div>
+        {% endfor %}
+  </form>
+  </div>
+
+
 
 
 
