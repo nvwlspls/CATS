@@ -20,9 +20,15 @@
 
 <script type="text/javascript">
 //append rows to band box
-    $("#bandRow").clone().appendTo("#bandPanel")
-</script>
 
+    $(function (){
+        var planeBandDiv = $('#bandRow')[0]
+        $('#addBandBtn').click(function(){
+            $("#bandRow").clone().appendTo("#bandPanel");
+         }   
+        )
+    })
+</script>
 {%  endblock %}
 
 {%  block content %}
@@ -34,9 +40,13 @@
     <form id="bandPanel" method='POST'>
     {% csrf_token %}
         {% for formGroup in BandFormSet %}
-            <div class="row panel" id="bandRow">
-              <div class='container' style='padding-top: 15px'>
-                <div class="col-md-3" >
+
+            <div class="row panel bandRowClass" id="bandRow">
+              <div class='container bandContainerClass' style='padding-top: 10px' id="bandContainer">
+                <div class='col-md-1'>
+                    <p class='text orderNum'></p>
+                </div>
+                <div class="col-md-2" >
                   <div class='container' >
                     <div class='form-group'>
                       {{formGroup.bandName}}
@@ -64,16 +74,20 @@
                   <p><a href="#" class="btn btn-default">Edit</a></p>
                 </div>
               </div>
-                <div class='col-md-2'>
+                              <div class='col-md-2'>
                   <div class='container'>
                     {{formGroup.subGenre}}
                     <p><a href="#" class='btn btn-default'>Edit</a></p>
-                  </div>
+                  
+            </div>
                 </div>
-                </div>
-              </div>
+
+                </div>              </div>
         {% endfor %}
+
   </form>
+      <a type="button" class="btn btn-primary btn-lg active" id="addBandBtn">
+        Add Band</a>
   </div>
 
 
@@ -138,6 +152,11 @@
 {##TODO: Add adjust proper css file for padding#}
 {% endblock %}
 {% block extraTail %}
+<script type="text/javascript">
+    var index = $(".bandRowClass").index();
+    $(".bandRowClass").add("<a>" + index + "</a>")
+</script>
+
 
     <script>
         $("#bandName").on("autocompleteselect", function( event, ui ){
@@ -173,6 +192,20 @@
     </script>
     <script> $('#searchList').hideseek();</script>
     <script> $('#bandWidget')</script>
+    <script> 
+        $(document).ready(function(){
+            $('#addBandBtn').click(function(){
+                $('.bandRowClass').each(function(index, element){
+                    console.log($(this).children().children().children('.orderNum').text(index +1))
+                            }
+                                )
+            })
+
+        })
+
+
+        
+    </script>
 
 {% endblock %}
 

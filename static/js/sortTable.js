@@ -20,3 +20,9 @@ $("#sort tbody").sortable({
     helper: fixHelperModified,
     stop: updateIndex
 }).disableSelection();
+
+var function(index, element){
+
+    element.prepend(index)
+
+}
