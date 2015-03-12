@@ -48,33 +48,46 @@ class viewEditHome(View):
         BandFormSet = formset_factory(addBandForm, extra = 3)
 
         bands = Band.objects.all()
-        bandNameDict = {}
+
+        bandDictList = []
+        idDictList = []
+        bandNameList = []
         bandObjectDict = {}
+
+
+
+
         for band in bands:
-            bandNameDict[str(band.bandName)] = band.bandID
-            bandObjectDict[band.bandID] = [str(band.bandName),
-                                           str(band.homeTown),
-                                           str(band.homeState2),
-                                           str(band.genre),
-                                           str(band.subGenre)]
 
-        bandNameDict = json.dumps(bandNameDict)
+
+            idDict= {
+                'label' : band.bandName,
+                'value' : band.bandID
+            }
+
+            bandList =  [band.bandName, 
+                         band.homeTown, 
+                         band.homeState2,
+                         band.genre,
+                         band.subGenre]
+
+            bandObjectDict[band.bandName] = bandList
+         
+
+            idDictList.append(idDict)
+            bandDictList.append(bandObjectDict)
+
         bandObjectDict = json.dumps(bandObjectDict)
-
-
-
-        bandObjects = Band.objects.all()
-
-        bands = list(Band.objects.values('bandName', 'bandID'))
-        bands = json.dumps(bands)
+        bandDictList= json.dumps(bandDictList)
+        idDictList = json.dumps(idDictList)
 
         return render_to_response('editHome.html', {'form': form,
-                                                    'bands': bands,
-                                                    'bandObjects': bandObjects,
-                                                    'bandNameDict' : bandNameDict,
-                                                    'bandObjectDict' : bandObjectDict,
-                                                    'BandFormSet' : BandFormSet},
-                                  context_instance = RequestContext(request))
+                                                'bands': bands,
+                                                'bandObjectDict' : bandObjectDict,
+                                                'BandFormSet' : BandFormSet,
+                                                'bandDictList' : bandDictList,
+                                                'idDictList': idDictList},
+                              context_instance = RequestContext(request))
 
 
 

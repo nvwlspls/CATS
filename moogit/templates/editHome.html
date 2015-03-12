@@ -3,38 +3,20 @@
 {% block extrahead %}
     {% load staticfiles %}
     <script src="{% static 'js/showsFunctions.js' %}"></script>
+    <script src'{% static "js/comboBox.js" %}'></script>
+<script>
+    var bandNames = {{ bandObjectDict|safe }};
+    var bandDictList = {{ bandDictList|safe }};
+    var idDict = {{ idDictList|safe }};
 
-    <script>
-        var bandNameDict = {{ bandNameDict|safe }};
-        var bandObjectDict = {{ bandObjectDict|safe }};
-        var bandKeys = Object.keys(bandNameDict);
 
-        $(function() {
-        var bandNames = {{ bandNameDict|safe }};
-        var bandNameList = Object.keys(bandNames)
-        $( '#bandName' ).autocomplete({
-          source: bandNameList
-        });
-    });
-    </script>
-
-<script type="text/javascript">
-//append rows to band box
-
-    $(function (){
-        var planeBandDiv = $('#bandRow')[0]
-        $('#addBandBtn').click(function(){
-            $("#bandRow").clone().appendTo("#bandPanel");
-         }   
-        )
-    })
 </script>
+
 {%  endblock %}
 
 {%  block content %}
 
 {#TODO: Add adjust proper css file for padding#}
-
 
   <div class="jumbotron" >
     <form id="bandPanel" method='POST'>
@@ -81,13 +63,16 @@
                   
             </div>
                 </div>
-
-                </div>              </div>
+             </div>              
+            </div>
         {% endfor %}
 
   </form>
-      <a type="button" class="btn btn-primary btn-lg active" id="addBandBtn">
-        Add Band</a>
+  <div class='row form-group'>
+          <a type="button" class="btn btn-primary btn-lg active" id="addBandBtn">
+            Add Band</a>
+
+  </div>
   </div>
 
 
@@ -131,7 +116,7 @@
                 <div class="row">
                     <span class="badge" style="background-color: transparent"><a href="#">add</a> </span>
                     <span class="badge" style="background-color: transparent"><a href="#">edit</a> </span>
-                    <div class="col-md-2 bandName">{{ bandObject.bandName }}</div>
+                    <div class="col-md-2 bandNameSearch">{{ bandObject.bandName }}</div>
                     <div class="col-md-2 bandTown">{{ bandObject.homeTown }}</div>
                     <div class="col-md-2 homeState2">{{ bandObject.homeState2 }}</div>
                     <div class="col-md-2">{{ bandObject.genre }}</div>
@@ -152,60 +137,75 @@
 {##TODO: Add adjust proper css file for padding#}
 {% endblock %}
 {% block extraTail %}
-<script type="text/javascript">
-    var index = $(".bandRowClass").index();
-    $(".bandRowClass").add("<a>" + index + "</a>")
+<script >
+    $(".bandName").autocomplete({
+        source: {{ idDictList|safe }}
+    })
+    var emptyBandRow =  $("#bandRow").clone();
 </script>
 
 
+
+
     <script>
-        $("#bandName").on("autocompleteselect", function( event, ui ){
+        $(".bandName").autocomplete({
 
-            var bandNameDict = {{ bandNameDict|safe }};
-            var bandObjectDict = {{ bandObjectDict|safe }};
-            var bandKeys = Object.keys(bandNameDict);
+            select :function(event, ui){
 
-            var bandName = ui.item.value;
+                event.preventDefault();
+                var bandName = ui.item.label;
+                var bandId = ui.item.value;
+                $(this).val(bandName);
 
-            //fill in the rest of the input fields with the band info
-            var bandID = bandNameDict[bandName];
-
-            var bandInfo = bandObjectDict[bandID];
-
-            //Get values from list
-            var townText = bandInfo[1];
-            var stateText = bandInfo[2];
-            var genreText = bandInfo[3];
-            var subGenreText = bandInfo[4];
-
-            //set the inputs to new values
-            document.getElementById("bandCity").value = townText;
-            document.getElementById("bandState").value = stateText;
-            document.getElementById("bandGenre").value = genreText;
-            document.getElementById("bandSubGenre").value = subGenreText;
-
-            //disable text inputs
-            $(".disable").prop('disabled', 'true');
+                //Find the sibling elements and set there values 
+                //based off of the band lis
+            
+           },
+           focus :function(event, ui){
+                event.preventDefault();
+                $(this).val(ui.item.label);
+           }
 
             }
         )
     </script>
     <script> $('#searchList').hideseek();</script>
     <script> $('#bandWidget')</script>
+    <script>
+    //append rows to band box
+        //copy empty row on page load
+    //use that to append each time the add band button is clicked
+    $(function (){
+        $('#addBandBtn').click(function(){
+           emptyBandRow.clone().appendTo("#bandPanel");
+            $(".bandName").autocomplete({
+                source : idDict
+            })        
+
+         }   
+        )
+    })
+    </script>
+    <script>
+    $(document).ready(function(){
+            $('.bandRowClass').each(function(index, element){
+                $(this).children().children().children('.orderNum').text(index +1)
+                        }
+                            )
+        })
+    </script>
     <script> 
         $(document).ready(function(){
             $('#addBandBtn').click(function(){
                 $('.bandRowClass').each(function(index, element){
-                    console.log($(this).children().children().children('.orderNum').text(index +1))
+                    $(this).children().children().children('.orderNum').text(index +1)
                             }
                                 )
             })
 
         })
-
-
-        
     </script>
+
 
 {% endblock %}
 
