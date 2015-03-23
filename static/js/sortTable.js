@@ -21,8 +21,3 @@ $("#sort tbody").sortable({
     stop: updateIndex
 }).disableSelection();
 
-var function(index, element){
-
-    element.prepend(index)
-
-}

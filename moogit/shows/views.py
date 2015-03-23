@@ -54,9 +54,6 @@ class viewEditHome(View):
         bandNameList = []
         bandObjectDict = {}
 
-
-
-
         for band in bands:
 
 

@@ -4,8 +4,120 @@
 		"selected_items":
 		[
 			[
+				"st",
+				"static	static"
+			],
+			[
+				"sta",
+				"staticu	static URL"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"appen",
+				"appendTo〔function〕"
+			],
+			[
+				"emp",
+				"emptyBandRow"
+			],
+			[
+				"append",
+				"appendTo"
+			],
+			[
+				"band",
+				"bandPanel"
+			],
+			[
+				"empt",
+				"emptyBandRow〔variable〕"
+			],
+			[
+				"bandS",
+				"bandSubGenre"
+			],
+			[
 				"ban",
-				"bandID"
+				"bandName"
+			],
+			[
+				"bane",
+				"bandNames〔variable〕"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"type",
+				"typeof〔keyword〕"
+			],
+			[
+				"aut",
+				"autocomplete"
+			],
+			[
+				"bandName",
+				"bandNameList"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"bandOb",
+				"bandObjectDict"
+			],
+			[
+				"padd",
+				"padding-left: 〔property〕"
+			],
+			[
+				"sp",
+				"span"
+			],
+			[
+				"elem",
+				"element〔variable〕"
+			],
+			[
+				"bandRo",
+				"bandRowClass"
+			],
+			[
+				"padding-",
+				"padding-left: 〔property〕"
+			],
+			[
+				"USS",
+				"USStateSelect〔module〕"
+			],
+			[
+				"U",
+				"USStateField"
+			],
+			[
+				"a",
+				"attrs={'class"
+			],
+			[
+				"add",
+				"addBandForm"
+			],
+			[
+				"form",
+				"formGroup"
+			],
+			[
+				"wi",
+				"widgets"
+			],
+			[
+				"Band",
+				"BandFormSet"
 			],
 			[
 				"show",
@@ -84,16 +196,8 @@
 				"neighborhoodFillers"
 			],
 			[
-				"band",
-				"bandNames"
-			],
-			[
 				"inser",
 				"insertVenue"
-			],
-			[
-				"con",
-				"contanctNickname"
 			],
 			[
 				"conta",
@@ -150,10 +254,6 @@
 			[
 				"ma",
 				"ManyToManyField"
-			],
-			[
-				"aut",
-				"auto_now"
 			],
 			[
 				"Date",
@@ -364,10 +464,6 @@
 				"api_key"
 			],
 			[
-				"a",
-				"api_key"
-			],
-			[
 				"back",
 				"background-color"
 			],
@@ -412,72 +508,118 @@
 				"font-family"
 			],
 			[
-				"sta",
-				"start_quote"
-			],
-			[
 				"start",
 				"start_link"
 			],
 			[
 				"no",
 				"nowrap"
-			],
-			[
-				"text",
-				"text-transform"
-			],
-			[
-				"col",
-				"color"
-			],
-			[
-				"fon",
-				"font-size"
-			],
-			[
-				"colo",
-				"background-color"
-			],
-			[
-				"pad",
-				"padding"
-			],
-			[
-				"l",
-				"li	Tag"
-			],
-			[
-				"bac",
-				"background-color"
-			],
-			[
-				"op",
-				"option	Tag"
-			],
-			[
-				"in",
-				"input	Tag"
-			],
-			[
-				"th",
-				"thead	Tag"
-			],
-			[
-				"i",
-				"iframe	Tag"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"contents": "            var bandObjectDict = {{ bandObjectDict|safe }};\n            var bandKeys = Object.keys(bandNameDict);\n\n            var bandName = ui.item.value;\n\n            //fill in the rest of the input fields with the band info\n            var bandID = bandNameDict[bandName];\n\n            var bandInfo = bandObjectDict[bandID];\n\n            //Get values from list\n            var townText = bandInfo[1];\n            var stateText = bandInfo[2];\n            var genreText = bandInfo[3];\n            var subGenreText = bandInfo[4];\n\n            //set the inputs to new values\n            document.getElementById(\"bandCity\").value = townText;\n            document.getElementById(\"bandState\").value = stateText;\n            document.getElementById(\"bandGenre\").value = genreText;\n            document.getElementById(\"bandSubGenre\").value = subGenreText;\n\n            //disable text inputs\n            $(\".disable\").prop('disabled', 'true');\n",
+			"settings":
+			{
+				"buffer_size": 938,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "    <script>\n        $(document).ready(function(){\n                $('.bandRowClass').each(function(index, element){\n                    console.log($(this).children().children().children('.orderNum').text(index +1))\n                            }\n                                )\n\n\n        })\n\n    </script>\n\n\n\n    <script> \n        $(document).ready(function(){\n            $('#addBandBtn').click(function(){\n                $('.bandRowClass').each(function(index, element){\n                    console.log($(this).children().children().children('.orderNum').text(index +1))\n                            }\n                                )\n            })\n\n        })\n    </script>\n\n    # \n<script>\n    var index = $(\".bandRowClass\").index();\n    $(\".bandRowClass\").add(\"<a>\" + index + \"</a>\")\n</script>\n #}\n",
+			"settings":
+			{
+				"buffer_size": 808,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<script >\n    $(\".bandName\").autocomplete({\n        source: {{ idDictList|safe }}\n    })\n    var emptyBandRow =  $(\"#bandRow\").clone(true);\n</script>",
+			"settings":
+			{
+				"buffer_size": 149,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "moogit/templates/editHome.html",
+			"settings":
+			{
+				"buffer_size": 6487,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/**\n * Created by waynejessen on 2/22/15.\n */\n\nvar fillIn = function (bandNameList, bandInfoList) {\n\n    var bandName = document.getElementById(\"bandName\").value;\n\n    //fill in the rest of the input fields with the band info\n    var bandID = bandNameList[bandName];\n\n    var bandInfo = bandInfoList[bandID];\n\n    //Get values from list\n    var townText = bandInfo[1];\n    var stateText = bandInfo[2];\n    var genreText = bandInfo[3];\n    var subGenreText = bandInfo[4];\n\n    //set the inputs to new values\n    document.getElementById(\"bandCity\").value = townText;\n    document.getElementById(\"bandState\").value = stateText;\n    document.getElementById(\"bandGenre\").value = genreText;\n    document.getElementById(\"bandSubGenre\").value = subGenreText;\n\n\n}\n\n//Create a clone of an empty row\nvar emptyBandRow =  $(\"#bandRow\").clone();\n\n\n\n\n\n\n//add autocompelte to bandName elements\n$(\".bandName\").autocomplete({\n    source: {{ idDictList|safe }}\n})\n\n//set up the autocomplete events for the bandName Elements\n$(\".bandName\").autocomplete({\n\n    select :function(event, ui){\n\n        event.preventDefault();\n        var bandName = ui.item.label;\n        var bandId = ui.item.value;\n        $(this).val(bandName);\n\n        //Find the sibling elements and set there values \n        //based off of the band lis\n    \n   },\n   focus :function(event, ui){\n        event.preventDefault();\n        $(this).val(ui.item.label);\n   }\n}\n//change the function of the addBandBtn\n$(function (){\n    $('#addBandBtn').click(function(){\n       emptyBandRow.clone().appendTo(\"#bandPanel\");\n        $(\".bandName\").autocomplete({\n            source : idDict\n        })        \n\n     }   \n    )\n})\n\n//add order number\n$(document).ready(function(){\n        $('.bandRowClass').each(function(index, element){\n            $(this).children().children().children('.orderNum').text(index +1)\n                    }\n                        )\n})\n\n//more order number\n$(document).ready(function(){\n    $('#addBandBtn').click(function(){\n        $('.bandRowClass').each(function(index, element){\n            $(this).children().children().children('.orderNum').text(index +1)\n                    }\n                        )\n    })\n\n})\n",
+			"file": "static/js/showsFunctions.js",
+			"file_size": 2198,
+			"file_write_time": 1426440393000000,
+			"settings":
+			{
+				"buffer_size": 2194,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html lang=\"en\" xmlns=\"http://www.w3.org/1999/html\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">\n    <link rel=\"icon\" href=\"../../favicon.ico\">\n\n    <title>Moogit!</title>\n\n    {% load staticfiles %}\n\n    <!-- Bootstrap core CSS -->\n{#     <link href=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css\" rel=\"stylesheet\">\n    <link href=\"https://code.jquery.com/ui/1.11.2/themes/le-frog/jquery-ui.css\" rel=\"stylesheet\"> #}\n{#     // <script src=\"https://code.jquery.com/jquery-1.11.2.min.js\"></script>\n    // <script src=\"https://code.jquery.com/ui/1.11.1/jquery-ui.min.js\"></script> #}\n  \n  {# Temp for when i has no internet #}\n  <link rel=\"stylesheet\" type=\"text/css\" href='{% static \"js/boo\" %}'\n\n    <script src=\"{% static 'js/bootstrap.min.js' %}\"></script>    \n    <script src=\"{% static 'js/jquery.hideseek.min.js' %}\"></script>\n\n    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->\n{#    <!--[if lt IE 9]><script src=\"../../assets/js/ie8-responsive-file-warning.js\"></script><![endif]-->#}\n{#    <script src=\"../../assets/js/ie-emulation-modes-warning.js\"></script>#}\n\n    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->\n    <!--[if lt IE 9]>\n      <script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>\n      <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n    <![endif]-->\n\n      {% block extrahead %}\n      {% endblock %}\n  </head>\n\n  <body>\n  <div class=\"container\" style=\"padding: 10px\">\n    <nav class=\"navbar navbar-inverse navbar-fixed-top\">\n        <div class=\"navbar-header\">\n          <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n          </button>\n          <a class=\"navbar-brand\" href=\"#\">Project name</a>\n        </div>\n        <div id=\"navbar\" class=\"collapse navbar-collapse\">\n          <ul class=\"nav navbar-nav\">\n            <li class=\"active\"><a href=\"#\">Home</a></li>\n            <li><a href=\"#about\">About</a></li>\n            <li><a href=\"#contact\">Contact</a></li>\n          </ul>\n        </div><!--/.nav-collapse -->\n    </nav>\n    </div>\n    <div class=\"container-fluid theme-showcase\" style=\"padding: 5%\">\n\n    {% block content %}\n    {% endblock %}\n    </div>\n\n\n\n\n    <!-- /.container -->\n\n\n    <!-- Bootstrap core JavaScript\n    ================================================== -->\n    <!-- Placed at the end of the document so the pages load faster -->\n    {% load staticfiles %}\n\n\n      {% block extraTail %}\n      {%  endblock %}\n    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->\n    <!--<script src=\"../../assets/js/ie10-viewport-bug-workaround.js\"></script>-->\n  </body>\n</html>\n\n",
+			"file": "moogit/templates/base.html",
+			"file_size": 3108,
+			"file_write_time": 1426524384000000,
+			"settings":
+			{
+				"buffer_size": 3180,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 374.0,
+		"height": 181.0,
 		"selected_items":
 		[
+			[
+				"jva",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"schem",
+				"Schemr: List favorite schemes"
+			],
+			[
+				"schm",
+				"Schemr: List favorite schemes"
+			],
+			[
+				"schemr",
+				"Schemr: Next scheme"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"packa inst",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Discover Packages"
+			],
 			[
 				"error",
 				"SublimeLinter: Next Error"
@@ -499,20 +641,12 @@
 				"Package Control: Install Package"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"aut",
 				"Snippet: autoescape"
 			],
 			[
 				"snippet",
 				"Snippet: block"
-			],
-			[
-				"inst",
-				"Package Control: Install Package"
 			],
 			[
 				"django",
@@ -535,12 +669,7 @@
 	},
 	"console":
 	{
-		"height": 125.0,
-		"history":
-		[
-			"import urllib2,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')",
-			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
-		]
+		"height": 125.0
 	},
 	"distraction_free":
 	{
@@ -551,12 +680,22 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/Users/waynejessen/djangoprojects/CATS_SUBLIME"
-	],
 	"file_history":
 	[
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/shows/forms.py",
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/shows/views.py",
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/static/js/showsFunctions.js",
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/static/js/comboBox.js",
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/static/js/comboBox.js",
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/static/js/sortTable.js",
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/templates/editHome.html",
+		"/Users/waynejessen/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/templates/base.html",
+		"/Users/waynejessen/Library/Application Support/Sublime Text 2/Packages/Schemr/SchemrFavorites.sublime-settings",
+		"/Users/waynejessen/Library/Application Support/Sublime Text 2/Packages/User/Python (Django).sublime-settings",
+		"/Users/waynejessen/Library/Application Support/Sublime Text 2/Packages/User/HTML (Django).sublime-settings",
+		"/Users/waynejessen/Library/Application Support/Sublime Text 2/Packages/Djaneiro/Settings/Python (Django).sublime-settings",
+		"/Users/waynejessen/Library/Application Support/Sublime Text 2/Packages/Djaneiro/Settings/HTML (Django).sublime-settings",
 		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/shows/insertShows.py",
 		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/insertFunctions.py",
 		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/createData.py",
@@ -581,9 +720,7 @@
 		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/shows/migrations/0008_auto_20150118_0029.py",
 		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/bandNames.py",
 		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/moogit/urls.py",
-		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/shows/views.py",
 		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/displayHome/views.py",
-		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/templates/base.html",
 		"/Users/waynejessen/djangoprojects/CATS_SUBLIME/moogit/static/untitled",
 		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/displayShow/views.py",
 		"/Users/waynejessen/djangoprojects/BEARS_SUBLIME/moogit/moogit/displayShow/urls.py",
@@ -672,19 +809,7 @@
 		"/Volumes/HDD/django_project/mysite/polls/admin.py",
 		"/Volumes/HDD/django_project/mysite/polls/tests.py",
 		"/Volumes/HDD/django_project/mysite/mysite/__init__.py",
-		"/Volumes/HDD/django_project/mysite/manage.py",
-		"/Volumes/HDD/Coursera_R/getmonitor.R",
-		"/Volumes/HDD/Coursera_R/corr.R",
-		"/Volumes/HDD/Dropbox/Assignment 7/web/computeAMOR.jsp",
-		"/Volumes/HDD/Dropbox/javascript files/Assignment 7/build.xml",
-		"/Volumes/HDD/Dropbox/javascript files/Assignment 7/A7 P2 (HTML page).txt",
-		"/Applications/MAMP/htdocs/inc/header.php",
-		"/Applications/MAMP/htdocs/receipt.php",
-		"/Applications/MAMP/htdocs/contact.php",
-		"/Volumes/HDD/Dropbox/Dropbox Resume/New Resume Statement",
-		"/Volumes/HDD/Dropbox/Dropbox Resume/qual blurbs",
-		"/Volumes/HDD/Dropbox/Dropbox Resume/Application Info",
-		"/Volumes/HDD/Dropbox/programming/newgit/inc/header.php"
+		"/Volumes/HDD/django_project/mysite/manage.py"
 	],
 	"find":
 	{
@@ -703,6 +828,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"()));",
+			"alert",
+			"addBandForm",
+			"        \n",
 			"Truesh",
 			"(\"%",
 			"homeState",
@@ -774,8 +903,196 @@
 	"groups":
 	[
 		{
+			"selected": 5,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"settings":
+					{
+						"buffer_size": 938,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								59,
+								59
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 6,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"settings":
+					{
+						"buffer_size": 808,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								808,
+								808
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"settings":
+					{
+						"buffer_size": 149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								149,
+								149
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "moogit/templates/editHome.html",
+					"settings":
+					{
+						"buffer_size": 6487,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2108,
+								2108
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "static/js/showsFunctions.js",
+					"settings":
+					{
+						"buffer_size": 2194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								564,
+								564
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "moogit/templates/base.html",
+					"settings":
+					{
+						"buffer_size": 3180,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								928,
+								928
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 166.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -818,7 +1135,6 @@
 	{
 		"height": 112.0
 	},
-	"project": "cats.sublime-project",
 	"replace":
 	{
 		"height": 42.0
@@ -844,25 +1160,10 @@
 		],
 		"width": 380.0
 	},
-	"select_symbol":
-	{
-		"height": 0.0,
-		"selected_items":
-		[
-		],
-		"width": 0.0
-	},
-	"selected_group": 0,
-	"settings":
-	{
-	},
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 211.0,
-	"status_bar_visible": true,
-	"template_settings":
-	{
-	}
+	"status_bar_visible": true
 }
