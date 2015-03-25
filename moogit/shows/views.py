@@ -75,7 +75,7 @@ class viewEditHome(View):
             bandDictList.append(bandObjectDict)
 
         bandObjectDict = json.dumps(bandObjectDict)
-        bandDictList= json.dumps(bandDictList)
+        bandDictList = json.dumps(bandDictList)
         idDictList = json.dumps(idDictList)
 
         return render_to_response('editHome.html', {'form': form,

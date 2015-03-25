@@ -19,50 +19,28 @@
   <div class="jumbotron" >
     <form id="bandPanel" method='POST'>
     {% csrf_token %}
-        {% for formGroup in BandFormSet %}
+        <table class='table' id="bandListTable">
+            <thead>
+                <th>Band Name</th>
+                <th>Home Town</th>
+                <th>Home State</th>
+                <th>Genre</th>
+                <th>Sub Genre</th>
+            </thead>
+            <tbody class="showBandList">
+            {% for formGroup in BandFormSet %}
+                <tr class="bandTableRow" id="bandRowID">
+                    <td class="bandNumberClass" id="bandNumberID"></td>
+                    <td class="bandNameClass">{{formGroup.bandName}}</td>
+                    <td class="bandTownClass">{{formGroup.bandTown}}</td>
+                    <td class="bandStateClass">{{formGroup.bandState}}</td>
+                    <td class="bandGenreClass">{{formGroup.genre}}</td>
+                    <td class="bandSubGenreClass">{{formGroup.subGenre}}</td>
+                </tr>   
+            {% endfor %}
+            </tbody>
+        </table>
 
-            <div class="row panel bandRowClass" id="bandRow">
-              <div class='container bandContainerClass' style='padding-top: 10px' id="bandContainer">
-                <div class='col-md-1'>
-                    <p class='text orderNum'></p>
-                </div>
-                <div class="col-md-2" >
-                  <div class='container' >
-                    <div class='form-group'>
-                      {{formGroup.bandName}}
-                      <p><a href="#" class="btn btn-default">Edit</a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class='col-md-3'>
-                  <div class='container'>
-                    <div class='form-group'>
-                      {{formGroup.bandTown}}
-                      <p><a href="#" class="btn btn-default">Edit</a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class='col-md-2' >
-                  <div class='container' >
-                    {{formGroup.bandState}}
-                    <p><a href="#" class="btn btn-default">Edit</a></p>
-                  </div>
-                </div>
-                <div class='col-md-2' >
-                    <div class='container'>
-                        {{formGroup.genre}}
-                        <p><a href="#" class="btn btn-default">Edit</a></p>
-                    </div>
-                </div>
-                <div class='col-md-2'>
-                    <div class='container'>
-                        {{formGroup.subGenre}}
-                        <p><a href="#" class='btn btn-default'>Edit</a></p>      
-                    </div>
-                </div>
-            </div>              
-            </div>
-        {% endfor %}
 
   </form>
   <div class='row form-group'>
@@ -70,26 +48,7 @@
             Add Band</a>
 
   </div>
-  </div>
-
-
-
-
-
-<div class="jumbotron">
-    <div class="container" style="padding: 10px">
-        <h3>Bands in show</h3>
-        <div class="row">
-            <div class="container" >
-                <ul class="list-group" id="bandsInShow" style="padding: 10px; background-color: #080808">
-
-                </ul>
-            </div>
-        </div>
-    </div>
 </div>
-
-
 
 <div class="jumbotron">
     <div class="container" style="padding: 10px">
@@ -108,7 +67,6 @@
             </div>
         <div class="list-group bandList">
             {% for bandObject in bandObjects %}
-
                 <li class="list-group-item" bandID="{{ bandObject.bandID }}">
                 <div class="row">
                     <span class="badge" style="background-color: transparent"><a href="#">add</a> </span>
