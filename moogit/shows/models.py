@@ -103,3 +103,16 @@ class show(models.Model):
 
     def __unicode__(self):
        return unicode(self.show2ID) 
+
+class genre(models.Model):
+
+    genreID = models.AutoField(primary_key = True)
+    genreName = models.CharField(max_length=100)
+
+class subGenre(models.Model):
+
+    fk_GenreID = models.ForeignKey("genre", related_name = 'subGenre_Genre')
+    subGenreName = models.CharField(max_length=100)
+
+
+

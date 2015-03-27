@@ -6,7 +6,7 @@
     <script src='{% static "js/comboBox.js" %}'></script>
 <script>
     var bandNames = {{ bandObjectDict|safe }};
-    var bandDictList = {{ bandDictList|safe }};
+    // var bandDictList = {{ bandDictList|safe }};
     var idDict = {{ idDictList|safe }};
 </script>
 
@@ -21,6 +21,7 @@
     {% csrf_token %}
         <table class='table' id="bandListTable">
             <thead>
+                <th>Order</th>
                 <th>Band Name</th>
                 <th>Home Town</th>
                 <th>Home State</th>

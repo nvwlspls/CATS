@@ -42,7 +42,7 @@ class viewEditHome(View):
 
         from shows.models import Band
         from shows.forms import addBandForm
-        
+
         form = addBandForm
 
         BandFormSet = formset_factory(addBandForm, extra = 3)
@@ -56,19 +56,12 @@ class viewEditHome(View):
 
         for band in bands:
 
+            idDict= { 'label' : band.bandName,'value' : band.bandID }
 
-            idDict= {
-                'label' : band.bandName,
-                'value' : band.bandID
-            }
+            bandList =  [band.bandName, band.homeTown, band.homeState2, band.genre, band.subGenre]
 
-            bandList =  [band.bandName, 
-                         band.homeTown, 
-                         band.homeState2,
-                         band.genre,
-                         band.subGenre]
 
-            bandObjectDict[band.bandName] = bandList
+            bandObjectDict[band.bandID] = bandList
          
 
             idDictList.append(idDict)

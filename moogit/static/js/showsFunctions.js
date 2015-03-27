@@ -26,11 +26,6 @@ var fillIn = function (bandNameList, bandInfoList) {
 
 };
 
-
-
-
-
-
 $(document).ready(function( ){
 
 
@@ -49,7 +44,12 @@ $(document).ready(function( ){
                 var bandName = ui.item.label;
                 var bandId = ui.item.value;
                 $(this).val(bandName);
-                console.log($(this).parents())  
+                var bandInfo = bandNames[bandId];
+                console.log(bandInfo)
+                $(this).parent().parent().find("#bandTownID").replaceWith("<p>" + bandInfo[1] + "</p>")
+                $(this).parent().parent().find("#bandStateID").replaceWith("<p>"+ bandInfo[2] + "</p>")
+                $(this).parent().parent().find("#bandNameID").replaceWith("<p>" + bandInfo[0] + "</p>")
+
                 },
                 //Find the sibling elements and set there values 
                 //based off of the band lis
@@ -67,18 +67,6 @@ $(document).ready(function( ){
             $(this).text(bandNumber);
         })
 
-
-
-        // get the bandnumber
-        // $('.bandRowClass').each(function(index, element){
-        //     $(this).children().children().children('.orderNum').text(index +1)
-        //             })
-        // //add bandNumber to elements
-        // $('#addBandBtn').click(function(){
-        //     $('.bandRowClass').each(function(index, element){
-        //         $(this).children().children().children('.orderNum').text(index +1)
-        //         })
-        // })
 //end of (document).ready
 });
 
@@ -90,7 +78,7 @@ $('#addBandBtn').click(function(){
         $(".bandName").autocomplete({
             source : idDict
         });
-
+        // console.log(emptyBandRow);
 
         //set the function for when an item is selected from autocomplete
         $(".bandName").autocomplete({
@@ -98,15 +86,23 @@ $('#addBandBtn').click(function(){
             select :function(event, ui){
                 event.preventDefault();
                 var bandName = ui.item.label;
-                var bandId   = ui.item.value;
+                var bandId = ui.item.value;
                 $(this).val(bandName);
-                var apples   = $(this).parent().siblings();
+                var bandInfo = bandNames[bandId];
+                console.log(bandInfo)
+                console.log()
+                $(this).parent().parent().find("#bandNameID").replaceWith("<p>" + bandInfo[0] + "</p>")
+                $(this).parent().parent().find("#bandTownID").replaceWith("<p>" + bandInfo[1] + "</p>")
+                $(this).parent().parent().find("#bandStateID").replaceWith("<p>"+ bandInfo[2] + "</p>")
+
+
                 },
                 //Find the sibling elements and set there values 
                 //based off of the band lis
             focus :function(event, ui){
                 event.preventDefault();
                 $(this).val(ui.item.label);
+
                 }
         });
 
@@ -114,8 +110,15 @@ $('#addBandBtn').click(function(){
 
             var bandNumber = index + 1;
             $(this).text(bandNumber);
-        })
-})
+            });
+});
+
+
+$(".bandNumberClass").each(function(index){
+
+    var bandNumber = index + 1;
+    $(this).text(bandNumber);
+    })
 
 //do it inside a function
 $(".bandNumberClass").text($(".bandTableRow").index(this))
