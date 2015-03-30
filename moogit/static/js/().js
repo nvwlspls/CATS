@@ -27,9 +27,9 @@ $(document).ready(function( ){
         document.getElementById("bandGenre").value = genreText;
 
     };
+
         //when document is loaded, edit button is hidden
         $(".editKey").hide();    
-        $(".saveKey").hide();
 
         //sets the autocomplete source for the bandName text inputs
         $(".bandName").autocomplete({
@@ -44,13 +44,16 @@ $(document).ready(function( ){
                 var bandName = ui.item.label;
                 var bandId = ui.item.value;
                 $(this).val(bandName);
-                var bandInfo = bandNames[bandId];            
-                $(this).parent().parent().find(".editKey").show()
-                $(this).parent().parent().find(".saveKey").show()
-                $(this).parent().parent().find("#bandTownID").replaceWith("<p class='editLock'>" + bandInfo[1] + "</p>")
-                $(this).parent().parent().find("#bandStateID").replaceWith("<p class='editLock'>"+ bandInfo[2] + "</p>")
-                $(this).parent().parent().find("#genreID").replaceWith("<p class='editLock'>" + bandInfo[3] + "</p>")
-                $(this).parent().parent().find("#bandNameID").replaceWith("<p class='editLock'>" + bandInfo[0] + "</p>")
+                var bandInfo = bandNames[bandId];
+                console.log(bandInfo)
+                console.log($(this).parent()    )
+                $(this).parent().parent().find("#bandTownID").replaceWith("<p>" + bandInfo[1] + "</p>")
+                $(this).parent().parent().find("#bandStateID").replaceWith("<p>"+ bandInfo[2] + "</p>")
+                $(this).parent().parent().find("#bandNameID").replaceWith("<p>" + bandInfo[0] + "</p>")
+
+
+                //when band is selected edit button becomes unhidden
+                //.show()
                 },
                 //Find the sibling elements and set there values 
                 //based off of the band lis
@@ -67,9 +70,6 @@ $(document).ready(function( ){
             $(this).text(bandNumber);
         })
 
-
-
-
 //end of (document).ready
 });
 
@@ -77,12 +77,9 @@ var emptyBandRow =  $("#bandRowID").clone();
 
 $('#addBandBtn').click(function(){
 
-        emptyRow = emptyBandRow.clone();
-        emptyRow.find('.editKey').show();
-        emptyRow.find('.saveKey').show();
+        // var emptyBandRow =  $("#bandRowID").clone();
 
-        
-        emptyRow.appendTo("#bandListTable");
+        emptyBandRow.clone().appendTo("#bandListTable");
 
         $(".bandName").autocomplete({
             source : idDict
@@ -99,19 +96,17 @@ $('#addBandBtn').click(function(){
                 $(this).val(bandName);
                 var bandInfo = bandNames[bandId];
                 console.log(bandInfo)
-
-                $(this).parent().parent().find(".editKey").show()
-                $(this).parent().parent().find(".saveKey").show()
-                $(this).parent().parent().find("#bandTownID").replaceWith("<p class='editLock'>" + bandInfo[1] + "</p>");
-                $(this).parent().parent().find("#bandStateID").replaceWith("<p class='editLock'>"+ bandInfo[2] + "</p>");
-                $(this).parent().parent().find("#genreID").replaceWith("<p class='editLock'>" + bandInfo[3] + "</p>")
-                $(this).parent().parent().find("#bandNameID").replaceWith("<p class='editLock'>" + bandInfo[0] + "</p>");
+                $(this).parent().parent().find("#bandTownID").replaceWith("<p>" + bandInfo[1] + "</p>");
+                $(this).parent().parent().find("#bandStateID").replaceWith("<p>"+ bandInfo[2] + "</p>");
+                $(this).parent().parent().find("#bandNameID").replaceWith("<p>" + bandInfo[0] + "</p>");
+                console.log($(this).parent())
                 },
                 //Find the sibling elements and set there values 
                 //based off of the band lis
             focus :function(event, ui){
                 event.preventDefault();
                 $(this).val(ui.item.label);
+
                 }
         });
 
@@ -123,26 +118,12 @@ $('#addBandBtn').click(function(){
 });
 
 
-//when editKey is clicked, alert change the related field to 
-//a text field with the value that is currently inside of it
-
-$(".editKey").click(function(){
-    pValue = $(this).parent().text();
-    $(this).siblings(".editLock").replaceWith("<input class='ui-autocomplete-input openEdit' type='text' value='" + pValue + "'><br>")
-});
-
-
-$(".saveKey").click(function(){
-    nValue = $(this).siblings(".openEdit").val()
-    $(this).siblings(".openEdit").replaceWith("<p class='editLock'>" + nValue + "</p>")
-});
-
-
-
-
 $(".bandNumberClass").each(function(index){
 
     var bandNumber = index + 1;
     $(this).text(bandNumber);
-})
+    })
+
+//do it inside a function
+$(".bandNumberClass").text($(".bandTableRow").index(this))
 

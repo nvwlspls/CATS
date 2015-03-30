@@ -6,9 +6,9 @@
     <script src='{% static "js/comboBox.js" %}'></script>
 <script>
     var bandNames = {{ bandObjectDict|safe }};
-    // var bandDictList = {{ bandDictList|safe }};
     var idDict = {{ idDictList|safe }};
 </script>
+
 
 {%  endblock %}
 
@@ -26,17 +26,23 @@
                 <th>Home Town</th>
                 <th>Home State</th>
                 <th>Genre</th>
-                <th>Sub Genre</th>
             </thead>
             <tbody class="showBandList">
             {% for formGroup in BandFormSet %}
                 <tr class="bandTableRow" id="bandRowID">
                     <td class="bandNumberClass" id="bandNumberID"></td>
-                    <td class="bandNameClass">{{formGroup.bandName}}</td>
-                    <td class="bandTownClass">{{formGroup.bandTown}}</td>
-                    <td class="bandStateClass">{{formGroup.bandState}}</td>
-                    <td class="bandGenreClass">{{formGroup.genre}}</td>
-                    <td class="bandSubGenreClass">{{formGroup.subGenre}}</td>
+                    <td class="bandNameClass">{{formGroup.bandName}}
+                        <a class= 'btn btn-default editKey'><p>edit</p></a>
+                        <a class='btn btn-default saveKey'><p>save</p></a></td>
+                    <td class="bandTownClass">{{formGroup.bandTown}}                   
+                       <a class= 'btn btn-default editKey'><p>edit</p></a>
+                       <a class='btn btn-default saveKey'><p>save</p></a></td>
+                    <td class="bandStateClass">{{formGroup.bandState}}
+                       <a class= 'btn btn-default editKey'><p>edit</p></a>
+                        <a class='btn btn-default saveKey'><p>save</p></a></td>
+                    <td class="bandGenreClass">{{formGroup.genre}}
+                        <a class= 'btn btn-default editKey'><p>edit</p></a>
+                        <a class='btn btn-default saveKey'><p>save</p></a></td>
                 </tr>   
             {% endfor %}
             </tbody>
@@ -47,9 +53,8 @@
   <div class='row form-group'>
           <a type="button" class="btn btn-primary btn-lg active" id="addBandBtn">
             Add Band</a>
-
   </div>
-</div>
+  </div>
 
 <div class="jumbotron">
     <div class="container" style="padding: 10px">
@@ -76,7 +81,6 @@
                     <div class="col-md-2 bandTown">{{ bandObject.homeTown }}</div>
                     <div class="col-md-2 homeState2">{{ bandObject.homeState2 }}</div>
                     <div class="col-md-2">{{ bandObject.genre }}</div>
-                    <div class="col-md-2">{{ bandObject.subGenre }}</div>
                 </div>
                 </li>
             {% endfor %}
