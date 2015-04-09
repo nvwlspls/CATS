@@ -30,6 +30,8 @@ $(document).ready(function( ){
         //when document is loaded, edit button is hidden
         $(".editKey").hide();    
         $(".saveKey").hide();
+        $(".stateEdit").hide(); 
+        $(".stateSave").hide(); 
 
         //sets the autocomplete source for the bandName text inputs
         $(".bandName").autocomplete({
@@ -47,6 +49,8 @@ $(document).ready(function( ){
                 var bandInfo = bandNames[bandId];            
                 $(this).parent().parent().find(".editKey").show()
                 $(this).parent().parent().find(".saveKey").show()
+                $(this).parent().parent().find(".stateEdit").show()
+                $(this).parent().parent().find(".stateSave").show()
                 $(this).parent().parent().find("#bandTownID").replaceWith("<p class='editLock'>" + bandInfo[1] + "</p>")
                 $(this).parent().parent().find("#bandStateID").replaceWith("<p class='editLock'>"+ bandInfo[2] + "</p>")
                 $(this).parent().parent().find("#genreID").replaceWith("<p class='editLock'>" + bandInfo[3] + "</p>")
@@ -67,13 +71,14 @@ $(document).ready(function( ){
             $(this).text(bandNumber);
         })
 
-
-
-
 //end of (document).ready
 });
 
+//emptyRow for adding later
 var emptyBandRow =  $("#bandRowID").clone();
+
+//state select for adding later
+var stateSelect = $("#bandStateID")
 
 $('#addBandBtn').click(function(){
 
@@ -102,6 +107,8 @@ $('#addBandBtn').click(function(){
 
                 $(this).parent().parent().find(".editKey").show()
                 $(this).parent().parent().find(".saveKey").show()
+                $(this).parent().parent().find(".stateEdit").show()
+                $(This).parent().parent().find(".stateSave").show()
                 $(this).parent().parent().find("#bandTownID").replaceWith("<p class='editLock'>" + bandInfo[1] + "</p>");
                 $(this).parent().parent().find("#bandStateID").replaceWith("<p class='editLock'>"+ bandInfo[2] + "</p>");
                 $(this).parent().parent().find("#genreID").replaceWith("<p class='editLock'>" + bandInfo[3] + "</p>")
@@ -127,17 +134,30 @@ $('#addBandBtn').click(function(){
 //a text field with the value that is currently inside of it
 
 $(".editKey").click(function(){
-    pValue = $(this).parent().text();
-    $(this).siblings(".editLock").replaceWith("<input class='ui-autocomplete-input openEdit' type='text' value='" + pValue + "'><br>")
+    pValue = $(this).parent().find(".editLock").text();
+    $(this).siblings(".editLock").replaceWith("<input class='ui-autocomplete-input openEdit' type='text' value='" + pValue + "'><br class='tempBR'>")
 });
 
 
 $(".saveKey").click(function(){
     nValue = $(this).siblings(".openEdit").val()
+    $(this).siblings("br").remove()
     $(this).siblings(".openEdit").replaceWith("<p class='editLock'>" + nValue + "</p>")
 });
 
+$(".stateEdit").click(function(){
+    
+    $(this).parent().find(".editLock").replaceWith(stateSelect)
 
+})
+
+
+$(".stateSave").click(function(){
+
+    pValue = $(this).parent().find("#bandStateID :selected").text()
+    $(this).siblings("#bandStateID").replaceWith("<p class='editLock'>" + pValue + "</p>")
+
+})
 
 
 $(".bandNumberClass").each(function(index){
