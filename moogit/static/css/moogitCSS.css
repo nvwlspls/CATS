@@ -4,12 +4,10 @@
 	font-size: 18px;	
 
 }
-
-.btn {
-
+.btn-special {
 	font-size: 14px;
 	padding: 8px;
 	background: #eee;
-	padding: 2px;
+	padding: 4px;
 	border: none;
 }

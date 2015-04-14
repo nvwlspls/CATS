@@ -41,9 +41,10 @@ class viewEditHome(View):
     def get(self, request, *args, **kwargs):
 
         from shows.models import Band
-        from shows.forms import addBandForm
+        from shows.forms import addBandForm, addShowForm
 
         form = addBandForm
+        showForm = addShowForm
 
         BandFormSet = formset_factory(addBandForm, extra = 3)
 
@@ -72,6 +73,7 @@ class viewEditHome(View):
         idDictList = json.dumps(idDictList)
 
         return render_to_response('editHome.html', {'form': form,
+                                                'addShowForm': addShowForm,
                                                 'bands': bands,
                                                 'bandObjectDict' : bandObjectDict,
                                                 'BandFormSet' : BandFormSet,
@@ -79,9 +81,13 @@ class viewEditHome(View):
                                                 'idDictList': idDictList},
                               context_instance = RequestContext(request))
 
+    def post(self, request, *args, **kwargs):
 
+        from shows.models import show, Band, Venue
 
+        
 
+        return HttpResponse("<p>Apples</p>")
 
 class editShows(View):
 

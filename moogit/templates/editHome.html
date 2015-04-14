@@ -2,8 +2,10 @@
 
 {% block extrahead %}
     {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.timepicker.css' %}">
     <script src="{% static 'js/showsFunctions.js' %}"></script>
     <script src='{% static "js/comboBox.js" %}'></script>
+    <script src="{% static 'js/jquery.timepicker.min.js'%}"></script>
 <script>
     var bandNames = {{ bandObjectDict|safe }};
     var idDict = {{ idDictList|safe }};
@@ -15,55 +17,105 @@
 {%  block content %}
 
 {#TODO: Add adjust proper css file for padding#}
-
-  <div class="jumbotron" >
-    <form id="bandPanel" method='POST'>
-    {% csrf_token %}
-        <table class='table' id="bandListTable">
-            <thead>
-                <th>Order</th>
-                <th>Band Name</th>
-                <th>Home Town</th>
-                <th>Home State</th>
-                <th>Genre</th>
-            </thead>
-            <tbody class="showBandList">
-            {% for formGroup in BandFormSet %}
-                <tr class="bandTableRow" id="bandRowID">
-                    <td class="bandNumberClass" id="bandNumberID"></td>
-                    <td class="bandNameClass">{{formGroup.bandName}}
-                        <a class= 'btn btn-default editKey'><p>edit</p></a>
-                        <a class='btn btn-default saveKey'><p>save</p></a></td>
-                    <td class="bandTownClass">{{formGroup.bandTown}}                   
-                       <a class= 'btn btn-default editKey'><p>edit</p></a>
-                       <a class='btn btn-default saveKey'><p>save</p></a></td>
-                    <td class="bandStateClass">{{formGroup.bandState}}
-                       <a class= 'btn btn-default stateEdit'><p>edit</p></a>
-                        <a class='btn btn-default stateSave'><p>save</p></a></td>
-                    <td class="bandGenreClass">{{formGroup.genre}}
-                        <a class= 'btn btn-default editKey'><p>edit</p></a>
-                        <a class='btn btn-default saveKey'><p>save</p></a></td>
-                </tr>   
-            {% endfor %}
-            </tbody>
-        </table>
-
-
-  </form>
-  <div class='row form-group'>
-          <a type="button" class="btn btn-primary btn-lg active" id="addBandBtn">
-            Add Band</a>
+<div class='row'>
+  
+  {# Sidebar Div #}
+  <div class="col-sm-3 jumbotron">
+      <div class='container'>
+    <ul class='nav nav-sidebar'>
+        <li>Some Show thing</li>
+        <li>Some Show thing</li>
+        <li>Some Show thing</li>
+        <li>Some Show thing</li>
+        <li>Some Show thing</li>
+        <li>Some Show thing</li>
+        <li>Some Show thing</li>
+      <li>Some Show thing</li>
+    </ul>
+    {# end sidebar div #}
   </div>
+</div>
+
+  {# Show Information Div #}
+    <div class='col-sm-9'  >
+      <form id='showTimeForm' method='POST' action=""> 
+      <div class='jumbotron' >
+        <div class='row'>
+          <div class='col-md-9'>
+              <h2 class="text-center">Show Information:</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class='container'>
+              <p>Date:</p>{{addShowForm.showDate}}
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class='container'>
+              <p>Time:</p>{{addShowForm.showTime}}
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class='container'>
+              <p>Venue:</p>{{addShowForm.showVenue}}
+            </div>
+          </div>
+        </div>
+      </div>
+    {# end information div #}
+    </div>
+  {# band list div #}
+    <div class="col-sm-9">
+    <div class="jumbotron" >
+      {% csrf_token %}
+          <table class='table' id="bandListTable">
+              <thead>
+                  <th>Order</th>
+                  <th>Band Name</th>
+                  <th>Home Town</th>
+                  <th>Home State</th>
+                  <th>Genre</th>
+              </thead>
+              <tbody class="showBandList">
+              {% for formGroup in BandFormSet %}
+                  <tr class="bandTableRow" id="bandRowID">
+                      <td class="bandNumberClass" id="bandNumberID"></td>
+                      <td class="bandNameClass">{{formGroup.bandName}}
+                          <a class= 'btn btn-default editKey btn-special'><p>edit</p></a>
+                          <a class='btn btn-default saveKey btn-special'><p>save</p></a></td>
+                      <td class="bandTownClass">{{formGroup.bandTown}}                   
+                         <a class= 'btn btn-default editKey btn-special'><p>edit</p></a>
+                         <a class='btn btn-default saveKey btn-special'><p>save</p></a></td>
+                      <td class="bandStateClass">{{formGroup.bandState}}
+                         <a class= 'btn btn-default stateEdit btn-special'><p>edit</p></a>
+                          <a class='btn btn-default stateSave btn-special'><p>save</p></a></td>
+                      <td class="bandGenreClass">{{formGroup.genre}}
+                          <a class= 'btn btn-default editKey btn-special'><p>edit</p></a>
+                          <a class='btn btn-default saveKey btn-special'><p>save</p></a></td>
+                  </tr>   
+              {% endfor %}
+              </tbody>
+          </table>
+      <div class='row form-group'>
+          <a type="button" class="btn btn-primary btn-large" id="addBandBtn">
+                  Add Band</a>
+          <input  type="submit" class="btn btn-success" value="Save Show" id="saveShowButton">
+
+      </div>
+    </form>
+  {#  end band list div #}
   </div>
 
 
 
 
+
+</div>
 
 {##TODO: Add adjust proper css file for padding#}
 {% endblock %}
 {% block extraTail %}
 <script type="text/javascript" src='{% static "js/showsFunctions.js" %}'></script>
-
 {% endblock %}
 

@@ -71,6 +71,9 @@ $(document).ready(function( ){
             $(this).text(bandNumber);
         })
 
+        $("#datePicker").datepicker();
+        $("#timePicker").timepicker(    );
+
 //end of (document).ready
 });
 
@@ -83,8 +86,10 @@ var stateSelect = $("#bandStateID")
 $('#addBandBtn').click(function(){
 
         emptyRow = emptyBandRow.clone();
-        emptyRow.find('.editKey').show();
-        emptyRow.find('.saveKey').show();
+        emptyRow.find('.editKey').hide();
+        emptyRow.find('.saveKey').hide();
+        emptyRow.find('.stateEdit').hide();
+        emptyRow.find('.stateSave').hide();
 
         
         emptyRow.appendTo("#bandListTable");
